@@ -8,6 +8,11 @@
 
 set -e
 
+# Distribution disabled for this fork — builds are done by hand.
+# Remove this guard to re-enable winget manifest updates.
+echo "Winget distribution is disabled for this fork." >&2
+exit 1
+
 VERSION="${1:-}"
 if [ -z "$VERSION" ]; then
     echo "Usage: $0 <version>"

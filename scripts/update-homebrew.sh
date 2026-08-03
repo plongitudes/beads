@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+# Distribution disabled for this fork — builds are done by hand.
+# Remove this guard to re-enable Homebrew formula updates.
+echo "Homebrew distribution is disabled for this fork." >&2
+exit 1
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
