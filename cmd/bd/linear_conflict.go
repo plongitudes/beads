@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/steveyegge/beads/internal/linear"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/linear"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // detectLinearConflicts finds issues that have been modified both locally and in Linear

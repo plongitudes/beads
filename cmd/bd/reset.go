@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 var resetCmd = &cobra.Command{

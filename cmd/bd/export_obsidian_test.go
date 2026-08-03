@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestFormatObsidianTask_StatusMapping(t *testing.T) {

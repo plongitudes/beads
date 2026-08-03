@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/git"
+	"github.com/plongitudes/beads/internal/git"
 )
 
 func TestGetEmbeddedHooks(t *testing.T) {
@@ -462,7 +462,7 @@ func TestHasBeadsJSONL(t *testing.T) {
 
 // TestInstallHooksChainingSkipsBdShim verifies that bd hooks install --chain
 // does NOT rename existing bd shims to .old (which would cause infinite recursion).
-// See: https://github.com/steveyegge/beads/issues/843
+// See: https://github.com/plongitudes/beads/issues/843
 func TestInstallHooksChainingSkipsBdShim(t *testing.T) {
 	tmpDir := t.TempDir()
 	runInDir(t, tmpDir, func() {
@@ -511,7 +511,7 @@ func TestInstallHooksChainingSkipsBdShim(t *testing.T) {
 
 // TestRunChainedHookSkipsBdShim verifies that runChainedHook() skips
 // .old hooks that are bd shims (to prevent infinite recursion).
-// See: https://github.com/steveyegge/beads/issues/843
+// See: https://github.com/plongitudes/beads/issues/843
 func TestRunChainedHookSkipsBdShim(t *testing.T) {
 	tmpDir := t.TempDir()
 	runInDir(t, tmpDir, func() {

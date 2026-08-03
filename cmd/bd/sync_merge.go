@@ -9,7 +9,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/steveyegge/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/beads"
 )
 
 // MergeResult contains the outcome of a 3-way merge

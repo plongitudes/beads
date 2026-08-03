@@ -9,11 +9,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/lockfile"
-	"github.com/steveyegge/beads/internal/rpc"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/lockfile"
+	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // daemonShutdownTimeout is how long to wait for graceful shutdown before force killing.

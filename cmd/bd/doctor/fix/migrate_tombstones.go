@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // legacyDeletionRecord represents a single deletion entry from the legacy deletions.jsonl manifest.

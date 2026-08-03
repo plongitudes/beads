@@ -12,11 +12,11 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/cmd/bd/doctor"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/daemon"
-	"github.com/steveyegge/beads/internal/rpc"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/cmd/bd/doctor"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/daemon"
+	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
 )
 
 var daemonCmd = &cobra.Command{

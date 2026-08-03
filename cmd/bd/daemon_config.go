@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/rpc"
 )
 
 // ensureBeadsDir ensures the local beads directory exists (.beads in the current workspace)

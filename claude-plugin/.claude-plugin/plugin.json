@@ -3,12 +3,12 @@
   "description": "AI-supervised issue tracker for coding workflows. Manage tasks, discover work, and maintain context with simple CLI commands.",
   "version": "0.47.0",
   "author": {
-    "name": "Steve Yegge",
-    "url": "https://github.com/steveyegge"
+    "name": "Beads Contributors",
+    "url": "https://github.com/plongitudes"
   },
-  "repository": "https://github.com/steveyegge/beads",
+  "repository": "https://github.com/plongitudes/beads",
   "license": "MIT",
-  "homepage": "https://github.com/steveyegge/beads",
+  "homepage": "https://github.com/plongitudes/beads",
   "keywords": [
     "issue-tracker",
     "task-management",

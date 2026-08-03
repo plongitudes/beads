@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/audit"
+	"github.com/plongitudes/beads/internal/audit"
 )
 
 var (

@@ -89,7 +89,7 @@ storage.UnderlyingDB().Exec(`
 `)
 ```
 
-See [EXTENDING.md](https://github.com/steveyegge/beads/blob/main/docs/EXTENDING.md).
+See [EXTENDING.md](https://github.com/plongitudes/beads/blob/main/docs/EXTENDING.md).
 
 ## Event System
 
@@ -139,7 +139,7 @@ bd list --label "sprint-1" --status open --json | \
 Use beads as a Go library:
 
 ```go
-import "github.com/steveyegge/beads/internal/storage"
+import "github.com/plongitudes/beads/internal/storage"
 
 db, _ := storage.NewSQLite(".beads/beads.db")
 issues, _ := db.ListIssues(storage.ListOptions{

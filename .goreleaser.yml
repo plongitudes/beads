@@ -193,7 +193,7 @@ changelog:
 
 release:
   github:
-    owner: steveyegge
+    owner: plongitudes
     name: beads
   draft: false
   prerelease: auto
@@ -207,17 +207,17 @@ release:
     
     **Homebrew (macOS/Linux):**
     ```bash
-    brew install steveyegge/beads/bd
+    brew install plongitudes/beads/bd
     ```
     
     **Quick Install (macOS/Linux/FreeBSD):**
     ```bash
-    curl -sSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+    curl -sSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
     ```
     
     **Windows (PowerShell):**
     ```powershell
-    irm https://raw.githubusercontent.com/steveyegge/beads/main/install.ps1 | iex
+    irm https://raw.githubusercontent.com/plongitudes/beads/main/install.ps1 | iex
     ```
     
     **Manual Install:**
@@ -227,11 +227,11 @@ release:
 # brews:
 #   - name: bd
 #     repository:
-#       owner: steveyegge
+#       owner: plongitudes
 #       name: homebrew-beads
 #       branch: main
 #     directory: Formula
-#     homepage: https://github.com/steveyegge/beads
+#     homepage: https://github.com/plongitudes/beads
 #     description: "AI-supervised issue tracker for coding workflows"
 #     license: MIT
 #     test: |

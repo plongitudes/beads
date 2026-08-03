@@ -1275,9 +1275,9 @@ func TestEntityRefIsEmpty(t *testing.T) {
 		{"empty ref", &EntityRef{}, true},
 		{"only name", &EntityRef{Name: "test"}, false},
 		{"only platform", &EntityRef{Platform: "gastown"}, false},
-		{"only org", &EntityRef{Org: "steveyegge"}, false},
+		{"only org", &EntityRef{Org: "plongitudes"}, false},
 		{"only id", &EntityRef{ID: "polecat-nux"}, false},
-		{"full ref", &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"}, false},
+		{"full ref", &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"}, false},
 	}
 
 	for _, tt := range tests {
@@ -1297,11 +1297,11 @@ func TestEntityRefURI(t *testing.T) {
 	}{
 		{"nil ref", nil, ""},
 		{"empty ref", &EntityRef{}, ""},
-		{"missing platform", &EntityRef{Org: "steveyegge", ID: "polecat-nux"}, ""},
+		{"missing platform", &EntityRef{Org: "plongitudes", ID: "polecat-nux"}, ""},
 		{"missing org", &EntityRef{Platform: "gastown", ID: "polecat-nux"}, ""},
-		{"missing id", &EntityRef{Platform: "gastown", Org: "steveyegge"}, ""},
-		{"full ref", &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"}, "entity://hop/gastown/steveyegge/polecat-nux"},
-		{"with name", &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"}, "entity://hop/gastown/steveyegge/polecat-nux"},
+		{"missing id", &EntityRef{Platform: "gastown", Org: "plongitudes"}, ""},
+		{"full ref", &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"}, "entity://hop/gastown/plongitudes/polecat-nux"},
+		{"with name", &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"}, "entity://hop/gastown/plongitudes/polecat-nux"},
 		{"github platform", &EntityRef{Platform: "github", Org: "anthropics", ID: "claude-code"}, "entity://hop/github/anthropics/claude-code"},
 	}
 
@@ -1323,8 +1323,8 @@ func TestEntityRefString(t *testing.T) {
 		{"nil ref", nil, ""},
 		{"empty ref", &EntityRef{}, ""},
 		{"only name", &EntityRef{Name: "polecat/Nux"}, "polecat/Nux"},
-		{"full ref with name", &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"}, "polecat/Nux"},
-		{"full ref without name", &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"}, "entity://hop/gastown/steveyegge/polecat-nux"},
+		{"full ref with name", &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"}, "polecat/Nux"},
+		{"full ref without name", &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"}, "entity://hop/gastown/plongitudes/polecat-nux"},
 		{"only id", &EntityRef{ID: "polecat-nux"}, "polecat-nux"},
 	}
 
@@ -1346,8 +1346,8 @@ func TestParseEntityURI(t *testing.T) {
 	}{
 		{
 			name:   "valid URI",
-			uri:    "entity://hop/gastown/steveyegge/polecat-nux",
-			expect: &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"},
+			uri:    "entity://hop/gastown/plongitudes/polecat-nux",
+			expect: &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"},
 		},
 		{
 			name:   "github URI",
@@ -1356,27 +1356,27 @@ func TestParseEntityURI(t *testing.T) {
 		},
 		{
 			name:   "id with slashes",
-			uri:    "entity://hop/gastown/steveyegge/polecat/nux",
-			expect: &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "polecat/nux"},
+			uri:    "entity://hop/gastown/plongitudes/polecat/nux",
+			expect: &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "polecat/nux"},
 		},
 		{
 			name:      "wrong prefix",
-			uri:       "beads://hop/gastown/steveyegge/polecat-nux",
+			uri:       "beads://hop/gastown/plongitudes/polecat-nux",
 			expectErr: true,
 		},
 		{
 			name:      "missing hop",
-			uri:       "entity://gastown/steveyegge/polecat-nux",
+			uri:       "entity://gastown/plongitudes/polecat-nux",
 			expectErr: true,
 		},
 		{
 			name:      "too few parts",
-			uri:       "entity://hop/gastown/steveyegge",
+			uri:       "entity://hop/gastown/plongitudes",
 			expectErr: true,
 		},
 		{
 			name:      "empty platform",
-			uri:       "entity://hop//steveyegge/polecat-nux",
+			uri:       "entity://hop//plongitudes/polecat-nux",
 			expectErr: true,
 		},
 		{
@@ -1386,7 +1386,7 @@ func TestParseEntityURI(t *testing.T) {
 		},
 		{
 			name:      "empty id",
-			uri:       "entity://hop/gastown/steveyegge/",
+			uri:       "entity://hop/gastown/plongitudes/",
 			expectErr: true,
 		},
 		{
@@ -1418,7 +1418,7 @@ func TestParseEntityURI(t *testing.T) {
 
 func TestEntityRefRoundTrip(t *testing.T) {
 	// Test that URI() and ParseEntityURI() are inverses
-	original := &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"}
+	original := &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"}
 	uri := original.URI()
 	parsed, err := ParseEntityURI(uri)
 	if err != nil {
@@ -1443,7 +1443,7 @@ func TestComputeContentHashWithCreator(t *testing.T) {
 		Status:    StatusOpen,
 		Priority:  2,
 		IssueType: TypeTask,
-		Creator:   &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"},
+		Creator:   &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"},
 	}
 
 	hash1 := issue1.ComputeContentHash()
@@ -1459,7 +1459,7 @@ func TestComputeContentHashWithCreator(t *testing.T) {
 		Status:    StatusOpen,
 		Priority:  2,
 		IssueType: TypeTask,
-		Creator:   &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "steveyegge", ID: "polecat-nux"},
+		Creator:   &EntityRef{Name: "polecat/Nux", Platform: "gastown", Org: "plongitudes", ID: "polecat-nux"},
 	}
 
 	hash3 := issue3.ComputeContentHash()
@@ -1512,7 +1512,7 @@ func TestComputeContentHashWithValidations(t *testing.T) {
 		ClosedAt:  &ts,
 		Validations: []Validation{
 			{
-				Validator: &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "refinery"},
+				Validator: &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "refinery"},
 				Outcome:   ValidationAccepted,
 				Timestamp: ts,
 			},
@@ -1535,7 +1535,7 @@ func TestComputeContentHashWithValidations(t *testing.T) {
 		ClosedAt:  &ts,
 		Validations: []Validation{
 			{
-				Validator: &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "refinery"},
+				Validator: &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "refinery"},
 				Outcome:   ValidationAccepted,
 				Timestamp: ts,
 			},
@@ -1557,7 +1557,7 @@ func TestComputeContentHashWithValidations(t *testing.T) {
 		ClosedAt:  &ts,
 		Validations: []Validation{
 			{
-				Validator: &EntityRef{Platform: "gastown", Org: "steveyegge", ID: "refinery"},
+				Validator: &EntityRef{Platform: "gastown", Org: "plongitudes", ID: "refinery"},
 				Outcome:   ValidationAccepted,
 				Timestamp: ts,
 				Score:     &score,

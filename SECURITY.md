@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in bd, please report it responsibly:
 
-**Email**: security@steveyegge.com (or open a private security advisory on GitHub)
+**Email**: security@plongitudes.com (or open a private security advisory on GitHub)
 
 Please include:
 - Description of the vulnerability
@@ -67,7 +67,7 @@ Once version 1.0 is released, we will support the latest major version and one p
 2. **Review before export** - Check `.beads/issues.jsonl` before committing sensitive project details
 3. **Use private repos** - If your issues contain proprietary information, use private git repositories
 4. **Validate git hooks** - If using automated export/import hooks, review them for safety
-5. **Regular updates** - Keep bd updated to the latest version: `go install github.com/steveyegge/beads/cmd/bd@latest`
+5. **Regular updates** - Keep bd updated to the latest version: `go install github.com/plongitudes/beads/cmd/bd@latest`
 
 ## Known Limitations
 

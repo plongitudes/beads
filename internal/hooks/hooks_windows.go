@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 	"os/exec"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // runHook executes the hook and enforces a timeout on Windows.

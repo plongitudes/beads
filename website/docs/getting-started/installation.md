@@ -13,7 +13,7 @@ Complete installation guide for all platforms.
 ### Homebrew (macOS/Linux)
 
 ```bash
-brew tap steveyegge/beads
+brew tap plongitudes/beads
 brew install bd
 ```
 
@@ -26,7 +26,7 @@ brew install bd
 ### Quick Install Script (All Platforms)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 ```
 
 The installer will:
@@ -41,18 +41,18 @@ The installer will:
 
 **Via Homebrew** (recommended):
 ```bash
-brew tap steveyegge/beads
+brew tap plongitudes/beads
 brew install bd
 ```
 
 **Via go install**:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 **From source**:
 ```bash
-git clone https://github.com/steveyegge/beads
+git clone https://github.com/plongitudes/beads
 cd beads
 go build -o bd ./cmd/bd
 sudo mv bd /usr/local/bin/
@@ -62,7 +62,7 @@ sudo mv bd /usr/local/bin/
 
 **Via Homebrew** (works on Linux too):
 ```bash
-brew tap steveyegge/beads
+brew tap plongitudes/beads
 brew install bd
 ```
 
@@ -76,19 +76,19 @@ paru -S beads-git
 
 **Via go install**:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ### FreeBSD
 
 **Via quick install script**:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 ```
 
 **Via go install**:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ### Windows 11
@@ -101,12 +101,12 @@ Beads ships with native Windows support—no MSYS or MinGW required.
 
 **Via PowerShell script**:
 ```pwsh
-irm https://raw.githubusercontent.com/steveyegge/beads/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/plongitudes/beads/main/install.ps1 | iex
 ```
 
 **Via go install**:
 ```pwsh
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ## IDE and Editor Integrations
@@ -183,7 +183,7 @@ bd is not in your PATH:
 
 ```bash
 # Check if installed
-go list -f {{.Target}} github.com/steveyegge/beads/cmd/bd
+go list -f {{.Target}} github.com/plongitudes/beads/cmd/bd
 
 # Add Go bin to PATH (add to ~/.bashrc or ~/.zshrc)
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -195,7 +195,7 @@ This is typically caused by CGO/SQLite compatibility issues:
 
 ```bash
 # Build with CGO enabled
-CGO_ENABLED=1 go install github.com/steveyegge/beads/cmd/bd@latest
+CGO_ENABLED=1 go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ## Updating bd
@@ -209,7 +209,7 @@ brew upgrade bd
 ### go install
 
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ## Next Steps

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/configfile"
 )
 
 // TestDatabaseConfigFix_JSONLMismatch tests that DatabaseConfig fixes JSONL mismatches.

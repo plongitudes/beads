@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/config"
+	"github.com/plongitudes/beads/internal/config"
 )
 
 func tempSockDir(t *testing.T) string {

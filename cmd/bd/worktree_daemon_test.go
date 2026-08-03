@@ -6,8 +6,8 @@ import (
 	"os/exec"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/git"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/git"
 
 	// Import SQLite driver for test database creation
 	_ "github.com/ncruces/go-sqlite3/driver"

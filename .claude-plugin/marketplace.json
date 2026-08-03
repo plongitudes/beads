@@ -2,7 +2,7 @@
   "name": "beads-marketplace",
   "description": "Local marketplace for beads plugin development",
   "owner": {
-    "name": "Steve Yegge"
+    "name": "Beads Contributors"
   },
   "plugins": [
     {

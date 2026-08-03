@@ -15,7 +15,7 @@ cat > "$OUTPUT_FILE" << 'EOF'
 
 > This file contains the complete beads documentation for LLM consumption.
 > Generated automatically from the documentation source files.
-> For the web version, visit: https://steveyegge.github.io/beads/
+> For the web version, visit: https://plongitudes.github.io/beads/
 
 ---
 
@@ -65,7 +65,7 @@ cat >> "$OUTPUT_FILE" << 'EOF'
 
 # End of Documentation
 
-For updates and contributions, visit: https://github.com/steveyegge/beads
+For updates and contributions, visit: https://github.com/plongitudes/beads
 EOF
 
 echo "Generated: $OUTPUT_FILE"

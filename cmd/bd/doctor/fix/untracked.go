@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/config"
+	"github.com/plongitudes/beads/internal/config"
 )
 
 // UntrackedJSONL stages and commits untracked .beads/*.jsonl files.

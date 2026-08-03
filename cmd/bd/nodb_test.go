@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/storage/memory"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/storage/memory"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestExtractIssuePrefix(t *testing.T) {

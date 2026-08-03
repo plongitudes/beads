@@ -6,7 +6,7 @@ import (
 	"database/sql"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // Compile-time interface conformance checks.

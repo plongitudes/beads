@@ -51,7 +51,7 @@ Add beads to your antivirus exclusion list:
 
 Before adding an exclusion, verify the downloaded file is legitimate:
 
-1. Download beads from the [official GitHub releases](https://github.com/steveyegge/beads/releases)
+1. Download beads from the [official GitHub releases](https://github.com/plongitudes/beads/releases)
 2. Verify the SHA256 checksum matches the `checksums.txt` file in the release
 3. Check the file is signed (future releases will include code signing)
 
@@ -75,7 +75,7 @@ Help improve detection accuracy by reporting the false positive:
 1. Visit [Kaspersky Threat Intelligence Portal](https://opentip.kaspersky.com/)
 2. Upload the `bd.exe` file for analysis
 3. Mark it as a false positive
-4. Reference: beads is open-source CLI tool (https://github.com/steveyegge/beads)
+4. Reference: beads is open-source CLI tool (https://github.com/plongitudes/beads)
 
 **Windows Defender:**
 1. Go to [Microsoft Security Intelligence](https://www.microsoft.com/en-us/wdsi/filesubmission)
@@ -143,7 +143,7 @@ However, results vary by antivirus vendor and version.
 ### Is beads safe to use?
 
 Yes. Beads is:
-- Open source (all code is auditable on [GitHub](https://github.com/steveyegge/beads))
+- Open source (all code is auditable on [GitHub](https://github.com/plongitudes/beads))
 - Signed releases include checksums for verification
 - Used by developers worldwide
 - A simple CLI tool for issue tracking
@@ -179,7 +179,7 @@ False positives may still occur with new releases until the certificate builds r
 
 If you encounter a new antivirus false positive:
 
-1. Open an issue on [GitHub](https://github.com/steveyegge/beads/issues)
+1. Open an issue on [GitHub](https://github.com/plongitudes/beads/issues)
 2. Include:
    - Antivirus software name and version
    - Detection/threat name

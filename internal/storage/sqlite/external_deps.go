@@ -16,8 +16,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/configfile"
 )
 
 // ExternalDepStatus represents whether an external dependency is satisfied

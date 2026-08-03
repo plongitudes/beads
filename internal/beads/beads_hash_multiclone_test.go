@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/testutil"
+	"github.com/plongitudes/beads/internal/testutil"
 )
 
 var testBDBinary string

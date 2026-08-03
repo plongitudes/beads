@@ -10,10 +10,10 @@ import (
 
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
-	"github.com/steveyegge/beads/cmd/bd/doctor/fix"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/cmd/bd/doctor/fix"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 // CheckInstallation verifies that .beads directory exists

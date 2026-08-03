@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 var migrateSyncCmd = &cobra.Command{

@@ -6,14 +6,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/git"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/git"
 )
 
 // ensureForkProtection prevents contributors from accidentally committing
 // the upstream issue database when working in a fork.
 //
-// When we detect this is a fork (any remote points to steveyegge/beads),
+// When we detect this is a fork (any remote points to plongitudes/beads),
 // we add .beads/issues.jsonl to .git/info/exclude so it won't be staged.
 // This is a per-clone setting that doesn't modify tracked files.
 //
@@ -77,9 +77,9 @@ func isUpstreamRepo(gitRoot string) bool {
 
 	// Check for upstream repo patterns
 	upstreamPatterns := []string{
-		"steveyegge/beads",
-		"git@github.com:steveyegge/beads",
-		"https://github.com/steveyegge/beads",
+		"plongitudes/beads",
+		"git@github.com:plongitudes/beads",
+		"https://github.com/plongitudes/beads",
 	}
 
 	for _, pattern := range upstreamPatterns {
@@ -91,7 +91,7 @@ func isUpstreamRepo(gitRoot string) bool {
 	return false
 }
 
-// isForkOfBeads checks if ANY remote points to steveyegge/beads.
+// isForkOfBeads checks if ANY remote points to plongitudes/beads.
 // This handles any remote naming convention (origin, upstream, github, etc.)
 // and correctly identifies actual beads forks vs user's own projects. (GH#823)
 func isForkOfBeads(gitRoot string) bool {
@@ -101,8 +101,8 @@ func isForkOfBeads(gitRoot string) bool {
 		return false // No remotes or git error - not a fork
 	}
 
-	// If any remote URL contains steveyegge/beads, this is a beads-related repo
-	return strings.Contains(string(out), "steveyegge/beads")
+	// If any remote URL contains plongitudes/beads, this is a beads-related repo
+	return strings.Contains(string(out), "plongitudes/beads")
 }
 
 // isForkProtectionDisabled checks if fork protection is disabled via git config.

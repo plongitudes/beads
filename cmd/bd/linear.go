@@ -10,10 +10,10 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/linear"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/linear"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // linearCmd is the root command for Linear integration.

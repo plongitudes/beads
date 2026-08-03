@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestTouchDatabaseFile_UsesJSONLMtime(t *testing.T) {

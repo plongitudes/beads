@@ -58,9 +58,9 @@ func TestIsUpstreamRepo(t *testing.T) {
 		remote   string
 		expected bool
 	}{
-		{"ssh upstream", "git@github.com:steveyegge/beads.git", true},
-		{"https upstream", "https://github.com/steveyegge/beads.git", true},
-		{"https upstream no .git", "https://github.com/steveyegge/beads", true},
+		{"ssh upstream", "git@github.com:plongitudes/beads.git", true},
+		{"https upstream", "https://github.com/plongitudes/beads.git", true},
+		{"https upstream no .git", "https://github.com/plongitudes/beads", true},
 		{"fork ssh", "git@github.com:contributor/beads.git", false},
 		{"fork https", "https://github.com/contributor/beads.git", false},
 		{"different repo", "git@github.com:someone/other-project.git", false},
@@ -70,9 +70,9 @@ func TestIsUpstreamRepo(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			// Verify the pattern matching logic matches what isUpstreamRepo uses
 			upstreamPatterns := []string{
-				"steveyegge/beads",
-				"git@github.com:steveyegge/beads",
-				"https://github.com/steveyegge/beads",
+				"plongitudes/beads",
+				"git@github.com:plongitudes/beads",
+				"https://github.com/plongitudes/beads",
 			}
 
 			matches := false
@@ -90,23 +90,23 @@ func TestIsUpstreamRepo(t *testing.T) {
 	}
 }
 
-// Test 1: Upstream maintainer (origin = steveyegge/beads)
+// Test 1: Upstream maintainer (origin = plongitudes/beads)
 func TestIsUpstreamRepo_Maintainer(t *testing.T) {
 	dir := setupGitRepoForForkTest(t)
-	addRemote(t, dir, "origin", "https://github.com/steveyegge/beads.git")
+	addRemote(t, dir, "origin", "https://github.com/plongitudes/beads.git")
 
 	if !isUpstreamRepo(dir) {
-		t.Error("expected isUpstreamRepo to return true for steveyegge/beads")
+		t.Error("expected isUpstreamRepo to return true for plongitudes/beads")
 	}
 }
 
 // Test 1b: Upstream maintainer with SSH URL
 func TestIsUpstreamRepo_MaintainerSSH(t *testing.T) {
 	dir := setupGitRepoForForkTest(t)
-	addRemote(t, dir, "origin", "git@github.com:steveyegge/beads.git")
+	addRemote(t, dir, "origin", "git@github.com:plongitudes/beads.git")
 
 	if !isUpstreamRepo(dir) {
-		t.Error("expected isUpstreamRepo to return true for SSH steveyegge/beads")
+		t.Error("expected isUpstreamRepo to return true for SSH plongitudes/beads")
 	}
 }
 
@@ -138,7 +138,7 @@ func TestIsUpstreamRepo_NoOrigin(t *testing.T) {
 func TestIsForkOfBeads_StandardFork(t *testing.T) {
 	dir := setupGitRepoForForkTest(t)
 	addRemote(t, dir, "origin", "https://github.com/peterkc/beads.git")
-	addRemote(t, dir, "upstream", "https://github.com/steveyegge/beads.git")
+	addRemote(t, dir, "upstream", "https://github.com/plongitudes/beads.git")
 
 	if !isForkOfBeads(dir) {
 		t.Error("expected isForkOfBeads to return true for standard fork setup")
@@ -149,7 +149,7 @@ func TestIsForkOfBeads_StandardFork(t *testing.T) {
 func TestIsForkOfBeads_CustomNaming(t *testing.T) {
 	dir := setupGitRepoForForkTest(t)
 	addRemote(t, dir, "origin", "https://github.com/peterkc/beads.git")
-	addRemote(t, dir, "github", "https://github.com/steveyegge/beads.git")
+	addRemote(t, dir, "github", "https://github.com/plongitudes/beads.git")
 
 	if !isForkOfBeads(dir) {
 		t.Error("expected isForkOfBeads to return true for custom remote naming")
@@ -191,7 +191,7 @@ func TestIsForkOfBeads_NoRemotes(t *testing.T) {
 func TestIsForkOfBeads_SSHRemote(t *testing.T) {
 	dir := setupGitRepoForForkTest(t)
 	addRemote(t, dir, "origin", "git@github.com:peterkc/beads.git")
-	addRemote(t, dir, "upstream", "git@github.com:steveyegge/beads.git")
+	addRemote(t, dir, "upstream", "git@github.com:plongitudes/beads.git")
 
 	if !isForkOfBeads(dir) {
 		t.Error("expected isForkOfBeads to return true for SSH upstream")
@@ -315,7 +315,7 @@ func TestIsForkProtectionDisabled(t *testing.T) {
 func TestConfigOptOut_GitConfig(t *testing.T) {
 	dir := setupGitRepoForForkTest(t)
 	addRemote(t, dir, "origin", "https://github.com/peterkc/beads.git")
-	addRemote(t, dir, "upstream", "https://github.com/steveyegge/beads.git")
+	addRemote(t, dir, "upstream", "https://github.com/plongitudes/beads.git")
 
 	// Verify this IS a fork of beads
 	if !isForkOfBeads(dir) {

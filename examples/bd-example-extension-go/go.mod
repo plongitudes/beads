@@ -2,7 +2,7 @@ module bd-example-extension-go
 
 go 1.24.0
 
-require github.com/steveyegge/beads v0.0.0-00010101000000-000000000000
+require github.com/plongitudes/beads v0.0.0-00010101000000-000000000000
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
@@ -19,4 +19,4 @@ require (
 )
 
 // For local development - remove when beads is published
-replace github.com/steveyegge/beads => ../..
+replace github.com/plongitudes/beads => ../..

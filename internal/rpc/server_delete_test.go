@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/storage/memory"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage/memory"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // TestHandleDelete_DryRun verifies that dry-run mode returns what would be deleted

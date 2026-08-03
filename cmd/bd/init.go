@@ -10,16 +10,16 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/cmd/bd/doctor"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/configfile"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/syncbranch"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/ui"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/cmd/bd/doctor"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 var initCmd = &cobra.Command{
@@ -164,7 +164,7 @@ With --stealth: configures per-repository git settings for invisible beads usage
 			fmt.Fprintf(os.Stderr, "     bd init\n\n")
 			fmt.Fprintf(os.Stderr, "  2. Then create worktrees with beads support:\n")
 			fmt.Fprintf(os.Stderr, "     bd worktree create <path> --branch <branch-name>\n\n")
-			fmt.Fprintf(os.Stderr, "For more information, see: https://github.com/steveyegge/beads/blob/main/docs/WORKTREES.md\n")
+			fmt.Fprintf(os.Stderr, "For more information, see: https://github.com/plongitudes/beads/blob/main/docs/WORKTREES.md\n")
 			os.Exit(1)
 		}
 

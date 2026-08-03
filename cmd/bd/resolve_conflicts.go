@@ -9,8 +9,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/merge"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/merge"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 var resolveConflictsCmd = &cobra.Command{

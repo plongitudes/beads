@@ -7,9 +7,9 @@ import (
 	"sort"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // GatedMolecule represents a molecule ready for gate-resume dispatch

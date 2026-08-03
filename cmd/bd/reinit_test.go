@@ -9,9 +9,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // TestDatabaseReinitialization tests all database reinitialization scenarios

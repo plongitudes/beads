@@ -5,25 +5,25 @@ This directory contains the winget manifest files for publishing beads to the Wi
 ## Installation (once published)
 
 ```powershell
-winget install SteveYegge.beads
+winget install Plongitudes.beads
 ```
 
 ## Manifest Files
 
-- `SteveYegge.beads.yaml` - Version manifest (main file)
-- `SteveYegge.beads.installer.yaml` - Installer configuration
-- `SteveYegge.beads.locale.en-US.yaml` - Package description and metadata
+- `Plongitudes.beads.yaml` - Version manifest (main file)
+- `Plongitudes.beads.installer.yaml` - Installer configuration
+- `Plongitudes.beads.locale.en-US.yaml` - Package description and metadata
 
 ## Submitting to winget-pkgs
 
 1. Fork https://github.com/microsoft/winget-pkgs
-2. Create directory: `manifests/s/SteveYegge/beads/<version>/`
+2. Create directory: `manifests/s/Plongitudes/beads/<version>/`
 3. Copy the three manifest files to that directory
 4. Submit a PR to microsoft/winget-pkgs
 
 Or use the wingetcreate tool:
 ```powershell
-wingetcreate update SteveYegge.beads --version <new-version> --urls <new-url> --submit
+wingetcreate update Plongitudes.beads --version <new-version> --urls <new-url> --submit
 ```
 
 ## Updating for New Releases
@@ -39,5 +39,5 @@ When releasing a new version:
 ### Getting the SHA256
 
 ```bash
-curl -sL https://github.com/steveyegge/beads/releases/download/v<VERSION>/checksums.txt | grep windows
+curl -sL https://github.com/plongitudes/beads/releases/download/v<VERSION>/checksums.txt | grep windows
 ```

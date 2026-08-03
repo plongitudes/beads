@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/configfile"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // DefaultCleanupAgeDays is the default age threshold for cleanup

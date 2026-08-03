@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/gofrs/flock"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/syncbranch"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestIsGitRepo_InGitRepo(t *testing.T) {
@@ -539,7 +539,7 @@ func TestHashBasedStalenessDetection_bd_f2f(t *testing.T) {
 
 // TestResolveNoGitHistoryForFromMain tests that --from-main forces noGitHistory=true
 // to prevent creating incorrect deletion records for locally-created beads.
-// See: https://github.com/steveyegge/beads/issues/417
+// See: https://github.com/plongitudes/beads/issues/417
 func TestResolveNoGitHistoryForFromMain(t *testing.T) {
 	t.Parallel()
 	tests := []struct {

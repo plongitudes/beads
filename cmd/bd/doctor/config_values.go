@@ -13,8 +13,8 @@ import (
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
 	"github.com/spf13/viper"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/configfile"
 )
 
 // validRoutingModes are the allowed values for routing.mode

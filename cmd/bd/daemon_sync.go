@@ -12,11 +12,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // exportToJSONLWithStore exports issues to JSONL using the provided store.

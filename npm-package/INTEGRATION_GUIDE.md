@@ -293,14 +293,14 @@ npm install --save-dev @beads/bd
 
 ## 📚 Next Steps
 
-1. **Read the full docs**: https://github.com/steveyegge/beads
+1. **Read the full docs**: https://github.com/plongitudes/beads
 2. **Try the quickstart**: `bd quickstart` (interactive tutorial)
 3. **Set up MCP**: For local Claude Desktop integration
-4. **Explore examples**: https://github.com/steveyegge/beads/tree/main/examples
+4. **Explore examples**: https://github.com/plongitudes/beads/tree/main/examples
 
 ## 🔗 Resources
 
-- [beads GitHub](https://github.com/steveyegge/beads)
+- [beads GitHub](https://github.com/plongitudes/beads)
 - [npm package](https://www.npmjs.com/package/@beads/bd)
 - [Claude Code docs](https://docs.claude.com/claude-code)
 - [SessionStart hooks](https://docs.claude.com/claude-code/hooks)
@@ -348,6 +348,6 @@ After setup, you should see:
 
 ## 🆘 Support
 
-- [File an issue](https://github.com/steveyegge/beads/issues)
-- [Read the FAQ](https://github.com/steveyegge/beads/blob/main/FAQ.md)
-- [Check troubleshooting](https://github.com/steveyegge/beads/blob/main/TROUBLESHOOTING.md)
+- [File an issue](https://github.com/plongitudes/beads/issues)
+- [Read the FAQ](https://github.com/plongitudes/beads/blob/main/FAQ.md)
+- [Check troubleshooting](https://github.com/plongitudes/beads/blob/main/TROUBLESHOOTING.md)

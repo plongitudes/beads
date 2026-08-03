@@ -311,4 +311,4 @@ func MigrateRepoMtimesTable(db *sql.DB) error {
 
 - [CONFIG.md](CONFIG.md) - Configuration system documentation
 - [EXTENDING.md](EXTENDING.md) - Database schema extension guide
-- [bd-307](https://github.com/steveyegge/beads/issues/307) - Original multi-repo feature request
+- [bd-307](https://github.com/plongitudes/beads/issues/307) - Original multi-repo feature request

@@ -5,7 +5,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // Transaction provides atomic multi-operation support within a single database transaction.

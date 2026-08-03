@@ -3,7 +3,7 @@ package sqlite
 import (
 	"testing"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestValidatePriority(t *testing.T) {

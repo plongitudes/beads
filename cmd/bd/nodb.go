@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/storage/memory"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/storage/memory"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // initializeNoDbMode sets up in-memory storage from JSONL file

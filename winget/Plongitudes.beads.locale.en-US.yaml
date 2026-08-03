@@ -1,16 +1,16 @@
 # yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.6.0.schema.json
-PackageIdentifier: SteveYegge.beads
+PackageIdentifier: Plongitudes.beads
 PackageVersion: 0.30.7
 PackageLocale: en-US
-Publisher: Steve Yegge
-PublisherUrl: https://github.com/steveyegge
-PublisherSupportUrl: https://github.com/steveyegge/beads/issues
-Author: Steve Yegge
+Publisher: Beads Contributors
+PublisherUrl: https://github.com/plongitudes
+PublisherSupportUrl: https://github.com/plongitudes/beads/issues
+Author: Beads Contributors
 PackageName: beads
-PackageUrl: https://github.com/steveyegge/beads
+PackageUrl: https://github.com/plongitudes/beads
 License: MIT
-LicenseUrl: https://github.com/steveyegge/beads/blob/main/LICENSE
-Copyright: Copyright (c) 2024 Steve Yegge
+LicenseUrl: https://github.com/plongitudes/beads/blob/main/LICENSE
+Copyright: Copyright (c) 2024 Beads Contributors
 ShortDescription: Distributed, git-backed graph issue tracker for AI agents
 Description: |
   beads (bd) is a distributed, git-backed graph issue tracker designed for AI-supervised coding workflows.
@@ -24,6 +24,6 @@ Tags:
   - git
   - cli
   - developer-tools
-ReleaseNotesUrl: https://github.com/steveyegge/beads/releases/tag/v0.30.7
+ReleaseNotesUrl: https://github.com/plongitudes/beads/releases/tag/v0.30.7
 ManifestType: defaultLocale
 ManifestVersion: 1.6.0

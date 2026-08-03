@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/ui"
 )
 var duplicatesCmd = &cobra.Command{
 	Use:     "duplicates",

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/steveyegge/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/storage"
 )
 
 // ConfigStore defines the minimal storage interface needed for config

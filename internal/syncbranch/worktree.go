@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/merge"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/merge"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // CommitResult contains information about a worktree commit operation
@@ -1133,7 +1133,7 @@ func GetCurrentBranch(ctx context.Context) (string, error) {
 // IsSyncBranchSameAsCurrent returns true if the sync branch is the same as the current branch.
 // This is used to detect the case where we can't use a worktree because the branch is already
 // checked out. In this case, we should commit directly to the current branch instead.
-// See: https://github.com/steveyegge/beads/issues/519
+// See: https://github.com/plongitudes/beads/issues/519
 func IsSyncBranchSameAsCurrent(ctx context.Context, syncBranch string) bool {
 	currentBranch, err := GetCurrentBranch(ctx)
 	if err != nil {

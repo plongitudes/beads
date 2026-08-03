@@ -12,7 +12,7 @@ import (
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 var repairCmd = &cobra.Command{

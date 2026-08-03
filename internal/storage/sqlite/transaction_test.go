@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // TestRunInTransactionBasic verifies the RunInTransaction method exists and

@@ -11,9 +11,9 @@ import (
 
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/configfile"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // DeepValidationResult holds all deep validation check results

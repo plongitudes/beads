@@ -1,10 +1,10 @@
-module github.com/steveyegge/beads/examples/monitor-webui
+module github.com/plongitudes/beads/examples/monitor-webui
 
 go 1.24.0
 
 require (
 	github.com/gorilla/websocket v1.5.3
-	github.com/steveyegge/beads v0.0.0
+	github.com/plongitudes/beads v0.0.0
 )
 
 require (
@@ -32,4 +32,4 @@ require (
 	golang.org/x/text v0.30.0 // indirect
 )
 
-replace github.com/steveyegge/beads => ../..
+replace github.com/plongitudes/beads => ../..

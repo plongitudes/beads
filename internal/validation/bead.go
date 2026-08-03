@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // ParsePriority extracts and validates a priority value from content.

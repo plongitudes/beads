@@ -9,10 +9,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/configfile"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 // PendingMigration represents a single pending migration

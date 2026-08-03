@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/storage/sqlite/migrations"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage/sqlite/migrations"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestMigrateChildCountersTable(t *testing.T) {

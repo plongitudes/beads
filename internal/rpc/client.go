@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/lockfile"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/lockfile"
 )
 
 // rpcDebugEnabled returns true if BD_RPC_DEBUG environment variable is set

@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // legacyDeletionRecordCmd represents a single deletion entry from the legacy deletions.jsonl manifest.

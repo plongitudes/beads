@@ -7,7 +7,7 @@ import (
 
 	"github.com/charmbracelet/lipgloss"
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // lipgloss styles for the thanks page using Ayu theme

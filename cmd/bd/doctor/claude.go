@@ -68,7 +68,7 @@ func CheckClaude() DoctorCheck {
 			Fix: "Set up Claude integration:\n" +
 				"  Option 1: Install the beads plugin (recommended)\n" +
 				"    • Provides hooks, slash commands, and MCP tools automatically\n" +
-				"    • See: https://github.com/steveyegge/beads/blob/main/docs/PLUGIN.md\n" +
+				"    • See: https://github.com/plongitudes/beads/blob/main/docs/PLUGIN.md\n" +
 				"\n" +
 				"  Option 2: CLI-only mode\n" +
 				"    • Run 'bd setup claude' to add SessionStart/PreCompact hooks\n" +
@@ -275,8 +275,8 @@ func CheckBdInPath() DoctorCheck {
 			Message: "'bd' command not found in PATH",
 			Detail:  "Claude hooks execute 'bd prime' and won't work without bd in PATH",
 			Fix: "Install bd globally:\n" +
-				"  • Homebrew: brew install steveyegge/tap/bd\n" +
-				"  • Script: curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash\n" +
+				"  • Homebrew: brew install plongitudes/tap/bd\n" +
+				"  • Script: curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash\n" +
 				"  • Or add bd to your PATH",
 		}
 	}
@@ -333,7 +333,7 @@ func CheckDocumentationBdPrimeReference(repoPath string) DoctorCheck {
 			Detail:  "Files: " + strings.Join(filesWithBdPrime, ", "),
 			Fix: "Upgrade bd to get the 'bd prime' command:\n" +
 				"  • Homebrew: brew upgrade bd\n" +
-				"  • Script: curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash\n" +
+				"  • Script: curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash\n" +
 				"  Or remove 'bd prime' references from documentation if using older version",
 		}
 	}

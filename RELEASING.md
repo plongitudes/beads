@@ -29,7 +29,7 @@ A beads release involves multiple distribution channels:
 
 ### Required Tools
 
-- `git` with push access to steveyegge/beads
+- `git` with push access to plongitudes/beads
 - `goreleaser` for building binaries
 - `npm` with authentication (for npm releases)
 - `python3` and `twine` (for PyPI releases)
@@ -38,7 +38,7 @@ A beads release involves multiple distribution channels:
 ### Required Access
 
 - GitHub: Write access to repository and ability to create releases
-- Homebrew: Write access to steveyegge/homebrew-beads
+- Homebrew: Write access to plongitudes/homebrew-beads
 - PyPI: Maintainer access to `beads-mcp` package
 - npm: Member of `@beads` organization
 
@@ -46,7 +46,7 @@ A beads release involves multiple distribution channels:
 
 ```bash
 # Check git
-git remote -v  # Should show steveyegge/beads
+git remote -v  # Should show plongitudes/beads
 
 # Check goreleaser
 goreleaser --version
@@ -219,7 +219,7 @@ gh release create v0.22.0 \
 
 ### Verify GitHub Release
 
-1. Visit https://github.com/steveyegge/beads/releases
+1. Visit https://github.com/plongitudes/beads/releases
 2. Verify v0.22.0 is marked as "Latest"
 3. Check all platform binaries are present:
    - `beads_0.22.0_darwin_amd64.tar.gz`
@@ -246,7 +246,7 @@ If you have goreleaser configured with Homebrew:
 
 ```bash
 # Clone tap repository
-git clone https://github.com/steveyegge/homebrew-beads.git
+git clone https://github.com/plongitudes/homebrew-beads.git
 cd homebrew-beads
 
 # Update formula
@@ -442,7 +442,7 @@ After all distribution channels are updated, verify each one:
 
 ```bash
 # Download and test binary
-wget https://github.com/steveyegge/beads/releases/download/v0.22.0/beads_0.22.0_darwin_arm64.tar.gz
+wget https://github.com/plongitudes/beads/releases/download/v0.22.0/beads_0.22.0_darwin_arm64.tar.gz
 tar -xzf beads_0.22.0_darwin_arm64.tar.gz
 ./bd version
 ```
@@ -473,7 +473,7 @@ bd version
 
 ```bash
 # Test quick install script
-curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 bd version
 ```
 
@@ -696,5 +696,5 @@ Examples:
 
 ## Questions?
 
-- Open an issue: https://github.com/steveyegge/beads/issues
-- Check existing releases: https://github.com/steveyegge/beads/releases
+- Open an issue: https://github.com/plongitudes/beads/issues
+- Check existing releases: https://github.com/plongitudes/beads/releases

@@ -110,7 +110,7 @@ The automation requires this secret to be configured:
 
 **PYPI_API_TOKEN**: Your PyPI API token
 1. Generate token at https://pypi.org/manage/account/token/
-2. Add to GitHub at https://github.com/steveyegge/beads/settings/secrets/actions
+2. Add to GitHub at https://github.com/plongitudes/beads/settings/secrets/actions
 3. Name: `PYPI_API_TOKEN`
 4. Value: `pypi-...` (your full token)
 
@@ -139,9 +139,9 @@ See [integrations/beads-mcp/PYPI.md](../integrations/beads-mcp/PYPI.md) for deta
 
 **Step 1: Wait for GitHub Actions to complete**
 
-Monitor the release workflow at: https://github.com/steveyegge/beads/actions
+Monitor the release workflow at: https://github.com/plongitudes/beads/actions
 
-Once complete, the release appears at: https://github.com/steveyegge/beads/releases/tag/v0.9.X
+Once complete, the release appears at: https://github.com/plongitudes/beads/releases/tag/v0.9.X
 
 **Step 2: Get SHA256s from release artifacts**
 
@@ -149,7 +149,7 @@ GoReleaser creates a `checksums.txt` file with all artifact hashes:
 
 ```bash
 # Download checksums file
-curl -sL https://github.com/steveyegge/beads/releases/download/v0.9.X/checksums.txt
+curl -sL https://github.com/plongitudes/beads/releases/download/v0.9.X/checksums.txt
 
 # Extract the SHA256s you need:
 # - beads_0.9.X_darwin_arm64.tar.gz (macOS Apple Silicon)
@@ -162,7 +162,7 @@ curl -sL https://github.com/steveyegge/beads/releases/download/v0.9.X/checksums.
 
 ```bash
 # Navigate to tap repo (if already cloned) or clone it
-cd /tmp/homebrew-beads || git clone https://github.com/steveyegge/homebrew-beads /tmp/homebrew-beads
+cd /tmp/homebrew-beads || git clone https://github.com/plongitudes/homebrew-beads /tmp/homebrew-beads
 
 # Pull latest changes
 cd /tmp/homebrew-beads
@@ -179,10 +179,10 @@ git pull
 # version "0.23.0"
 # on_macos do
 #   if Hardware::CPU.arm?
-#     url "https://github.com/steveyegge/beads/releases/download/v#{version}/beads_#{version}_darwin_arm64.tar.gz"
+#     url "https://github.com/plongitudes/beads/releases/download/v#{version}/beads_#{version}_darwin_arm64.tar.gz"
 #     sha256 "abc123..."
 #   else
-#     url "https://github.com/steveyegge/beads/releases/download/v#{version}/beads_#{version}_darwin_amd64.tar.gz"
+#     url "https://github.com/plongitudes/beads/releases/download/v#{version}/beads_#{version}_darwin_amd64.tar.gz"
 #     sha256 "def456..."
 
 # Commit and push
@@ -234,9 +234,9 @@ Just push your tag and wait ~5 minutes:
 git push origin v0.9.X
 ```
 
-Monitor at: https://github.com/steveyegge/beads/actions
+Monitor at: https://github.com/plongitudes/beads/actions
 
-The release will appear at: https://github.com/steveyegge/beads/releases
+The release will appear at: https://github.com/plongitudes/beads/releases
 
 ## Post-Release
 

@@ -2,7 +2,7 @@ module example.com/beads-library-demo
 
 go 1.24.0
 
-require github.com/steveyegge/beads v0.0.0
+require github.com/plongitudes/beads v0.0.0
 
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
@@ -19,4 +19,4 @@ require (
 )
 
 // For local development, replace with local path
-replace github.com/steveyegge/beads => ../..
+replace github.com/plongitudes/beads => ../..

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/merge"
+	"github.com/plongitudes/beads/internal/merge"
 )
 
 func TestParseConflicts(t *testing.T) {

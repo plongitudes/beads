@@ -9,16 +9,16 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/hooks"
-	"github.com/steveyegge/beads/internal/routing"
-	"github.com/steveyegge/beads/internal/rpc"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/timeparsing"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/ui"
-	"github.com/steveyegge/beads/internal/validation"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/hooks"
+	"github.com/plongitudes/beads/internal/routing"
+	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/timeparsing"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/validation"
 )
 
 var createCmd = &cobra.Command{

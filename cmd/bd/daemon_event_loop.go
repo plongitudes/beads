@@ -7,9 +7,9 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/rpc"
-	"github.com/steveyegge/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/storage"
 )
 
 // DefaultRemoteSyncInterval is the default interval for periodic remote sync.

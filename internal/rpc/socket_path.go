@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // MaxUnixSocketPath is the maximum length for Unix socket paths.

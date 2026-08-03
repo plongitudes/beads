@@ -10,8 +10,8 @@ import (
 
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/configfile"
 )
 
 // DBJSONLSync fixes database-JSONL sync issues by running the appropriate sync command.

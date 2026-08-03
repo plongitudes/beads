@@ -603,7 +603,7 @@ needs = ["await-ci"]
 description = """
 Check the GitHub releases page.
 
-https://github.com/steveyegge/beads/releases/tag/v{{version}}
+https://github.com/plongitudes/beads/releases/tag/v{{version}}
 
 Verify:
 - Release created
@@ -669,7 +669,7 @@ brew upgrade bd
 
 Option 2 - Install script:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 ```
 
 Verify:

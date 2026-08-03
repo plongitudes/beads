@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/steveyegge/beads/internal/importer"
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/importer"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // fieldComparator handles comparison logic for a specific field type

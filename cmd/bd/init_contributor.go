@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // runContributorWizard guides the user through OSS contributor setup

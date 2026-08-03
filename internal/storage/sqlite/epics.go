@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // GetEpicsEligibleForClosure returns all epics with their completion status

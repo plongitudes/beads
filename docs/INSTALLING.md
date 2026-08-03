@@ -33,7 +33,7 @@ Beads has several components - here's what they are and when you need them:
 ### Homebrew (macOS/Linux)
 
 ```bash
-brew tap steveyegge/beads
+brew tap plongitudes/beads
 brew install bd
 ```
 
@@ -46,7 +46,7 @@ brew install bd
 ### Quick Install Script (All Platforms)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 ```
 
 The installer will:
@@ -75,18 +75,18 @@ The installer will:
 
 **Via Homebrew** (recommended):
 ```bash
-brew tap steveyegge/beads
+brew tap plongitudes/beads
 brew install bd
 ```
 
 **Via go install**:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 **From source**:
 ```bash
-git clone https://github.com/steveyegge/beads
+git clone https://github.com/plongitudes/beads
 cd beads
 go build -o bd ./cmd/bd
 sudo mv bd /usr/local/bin/
@@ -96,7 +96,7 @@ sudo mv bd /usr/local/bin/
 
 **Via Homebrew** (works on Linux too):
 ```bash
-brew tap steveyegge/beads
+brew tap plongitudes/beads
 brew install bd
 ```
 
@@ -112,12 +112,12 @@ Thanks to [@v4rgas](https://github.com/v4rgas) for maintaining the AUR package!
 
 **Via go install**:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 **From source**:
 ```bash
-git clone https://github.com/steveyegge/beads
+git clone https://github.com/plongitudes/beads
 cd beads
 go build -o bd ./cmd/bd
 sudo mv bd /usr/local/bin/
@@ -127,12 +127,12 @@ sudo mv bd /usr/local/bin/
 
 **Via Quick Install Script**:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 ```
 
 **Via go install**:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ### Windows 11
@@ -145,17 +145,17 @@ Beads now ships with native Windows support—no MSYS or MinGW required.
 
 **Via PowerShell script**:
 ```pwsh
-irm https://raw.githubusercontent.com/steveyegge/beads/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/plongitudes/beads/main/install.ps1 | iex
 ```
 
 **Via go install**:
 ```pwsh
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 **From source**:
 ```pwsh
-git clone https://github.com/steveyegge/beads
+git clone https://github.com/plongitudes/beads
 cd beads
 go build -o bd.exe ./cmd/bd
 Move-Item bd.exe $env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\
@@ -216,7 +216,7 @@ For enhanced UX with slash commands:
 
 ```bash
 # In Claude Code
-/plugin marketplace add steveyegge/beads
+/plugin marketplace add plongitudes/beads
 /plugin install beads
 # Restart Claude Code
 ```
@@ -290,13 +290,13 @@ bd is not in your PATH. Either:
 
 ```bash
 # Check if installed
-go list -f {{.Target}} github.com/steveyegge/beads/cmd/bd
+go list -f {{.Target}} github.com/plongitudes/beads/cmd/bd
 
 # Add Go bin to PATH (add to ~/.bashrc or ~/.zshrc)
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Or reinstall
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ### `zsh: killed bd` or crashes on macOS
@@ -306,16 +306,16 @@ Some users report crashes when running `bd init` or other commands on macOS. Thi
 **Workaround:**
 ```bash
 # Build with CGO enabled
-CGO_ENABLED=1 go install github.com/steveyegge/beads/cmd/bd@latest
+CGO_ENABLED=1 go install github.com/plongitudes/beads/cmd/bd@latest
 
 # Or if building from source
-git clone https://github.com/steveyegge/beads
+git clone https://github.com/plongitudes/beads
 cd beads
 CGO_ENABLED=1 go build -o bd ./cmd/bd
 sudo mv bd /usr/local/bin/
 ```
 
-If you installed via Homebrew, this shouldn't be necessary as the formula already enables CGO. If you're still seeing crashes with the Homebrew version, please [file an issue](https://github.com/steveyegge/beads/issues).
+If you installed via Homebrew, this shouldn't be necessary as the formula already enables CGO. If you're still seeing crashes with the Homebrew version, please [file an issue](https://github.com/plongitudes/beads/issues).
 
 ### Claude Code Plugin: MCP server fails to start
 
@@ -362,7 +362,7 @@ brew upgrade bd
 ### go install
 
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 ```
 
 ### From source

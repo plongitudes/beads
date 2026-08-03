@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/configfile"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/configfile"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestGetReadyWork(t *testing.T) {

@@ -158,6 +158,6 @@ bd hooks status
 
 ### How do I report a bug?
 
-1. Check existing issues: https://github.com/steveyegge/beads/issues
+1. Check existing issues: https://github.com/plongitudes/beads/issues
 2. Include: `bd version`, `bd info --json`, reproduction steps
-3. File at: https://github.com/steveyegge/beads/issues/new
+3. File at: https://github.com/plongitudes/beads/issues/new

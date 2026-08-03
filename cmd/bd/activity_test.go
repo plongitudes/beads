@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/steveyegge/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/rpc"
 )
 
 // TestParseDurationString tests the duration parsing function

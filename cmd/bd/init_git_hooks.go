@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // hooksInstalled checks if bd git hooks are installed

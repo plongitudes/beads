@@ -7,9 +7,9 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/storage"
 
 	// Import SQLite driver (same as used by storage/sqlite)
 	_ "github.com/ncruces/go-sqlite3/driver"

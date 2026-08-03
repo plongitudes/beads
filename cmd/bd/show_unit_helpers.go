@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/validation"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/validation"
 )
 
 // validateIssueUpdatable checks if an issue can be updated.

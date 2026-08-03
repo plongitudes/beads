@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // TestExportIntegrityAfterJSONLTruncation simulates the bd-160 bug scenario.

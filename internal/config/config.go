@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/spf13/viper"
-	"github.com/steveyegge/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/debug"
 )
 
 var v *viper.Viper

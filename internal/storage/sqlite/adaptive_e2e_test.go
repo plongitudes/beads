@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestAdaptiveIDLength_E2E(t *testing.T) {

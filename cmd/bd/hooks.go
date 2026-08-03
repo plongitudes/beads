@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/git"
+	"github.com/plongitudes/beads/internal/git"
 )
 
 //go:embed templates/hooks/*
@@ -346,7 +346,7 @@ func installHooks(embeddedHooks map[string]string, force bool, shared bool, chai
 			if chain {
 				// Chain mode - rename to .old so bd hooks run can call it
 				// But skip if existing hook is already a bd shim - renaming it would
-				// cause infinite recursion. See: https://github.com/steveyegge/beads/issues/843
+				// cause infinite recursion. See: https://github.com/plongitudes/beads/issues/843
 				versionInfo, verr := getHookVersion(hookPath)
 				if verr != nil || !versionInfo.IsShim {
 					// Not a bd shim - safe to rename for chaining
@@ -453,7 +453,7 @@ func runChainedHook(hookName string, args []string) int {
 
 	// Check if .old is itself a bd shim - skip to prevent infinite recursion
 	// This can happen if user runs `bd hooks install --chain` multiple times,
-	// renaming an existing bd shim to .old. See: https://github.com/steveyegge/beads/issues/843
+	// renaming an existing bd shim to .old. See: https://github.com/plongitudes/beads/issues/843
 	versionInfo, err := getHookVersion(oldHookPath)
 	if err == nil && versionInfo.IsShim {
 		// Skip execution - .old is a bd shim which would call us again
@@ -510,7 +510,7 @@ func runPreCommitHook() int {
 	// Stage JSONL files for commit
 	// By default, we auto-stage for convenience. Users with conflicting git hooks
 	// (e.g., hooks that read the staging area) can set BEADS_NO_AUTO_STAGE=1 to
-	// disable this and stage manually. See: https://github.com/steveyegge/beads/issues/826
+	// disable this and stage manually. See: https://github.com/plongitudes/beads/issues/826
 	jsonlFiles := []string{".beads/beads.jsonl", ".beads/issues.jsonl", ".beads/deletions.jsonl", ".beads/interactions.jsonl"}
 
 	if os.Getenv("BEADS_NO_AUTO_STAGE") != "" {

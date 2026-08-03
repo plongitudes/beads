@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/storage/sqlite/migrations"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage/sqlite/migrations"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestMigrateDirtyIssuesTable(t *testing.T) {

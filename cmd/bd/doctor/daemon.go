@@ -7,11 +7,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/steveyegge/beads/internal/daemon"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/rpc"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/daemon"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 // CheckDaemonStatus checks the health of the daemon for a workspace.

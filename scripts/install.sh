@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Beads (bd) installation script
-# Usage: curl -fsSL https://raw.githubusercontent.com/steveyegge/beads/main/scripts/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
 #
 # ⚠️ IMPORTANT: This script must be EXECUTED, never SOURCED
 # ❌ WRONG: source install.sh (will exit your shell on errors)
@@ -46,7 +46,7 @@ release_has_asset() {
 }
 
 # Re-sign binary for macOS to avoid slow Gatekeeper checks
-# See: https://github.com/steveyegge/beads/issues/466
+# See: https://github.com/plongitudes/beads/issues/466
 resign_for_macos() {
     local binary_path=$1
 
@@ -138,7 +138,7 @@ install_from_release() {
 
     # Get latest release version
     log_info "Fetching latest release..."
-    local latest_url="https://api.github.com/repos/steveyegge/beads/releases/latest"
+    local latest_url="https://api.github.com/repos/plongitudes/beads/releases/latest"
     local version
     local release_json
 
@@ -162,7 +162,7 @@ install_from_release() {
 
     # Download URL
     local archive_name="beads_${version#v}_${platform}.tar.gz"
-    local download_url="https://github.com/steveyegge/beads/releases/download/${version}/${archive_name}"
+    local download_url="https://github.com/plongitudes/beads/releases/download/${version}/${archive_name}"
 
     if ! release_has_asset "$release_json" "$archive_name"; then
         log_warning "No prebuilt archive available for platform ${platform}. Falling back to source installation methods."
@@ -264,7 +264,7 @@ check_go() {
 install_with_go() {
     log_info "Installing bd using 'go install'..."
 
-    if go install github.com/steveyegge/beads/cmd/bd@latest; then
+    if go install github.com/plongitudes/beads/cmd/bd@latest; then
         log_success "bd installed successfully via go install"
 
         # Record where we expect the binary to have been installed
@@ -307,7 +307,7 @@ build_from_source() {
     cd "$tmp_dir"
     log_info "Cloning repository..."
 
-    if git clone --depth 1 https://github.com/steveyegge/beads.git; then
+    if git clone --depth 1 https://github.com/plongitudes/beads.git; then
         cd beads
         log_info "Building binary..."
 
@@ -513,12 +513,12 @@ main() {
     log_error "Installation failed"
     echo ""
     echo "Manual installation:"
-    echo "  1. Download from https://github.com/steveyegge/beads/releases/latest"
+    echo "  1. Download from https://github.com/plongitudes/beads/releases/latest"
     echo "  2. Extract and move 'bd' to your PATH"
     echo ""
     echo "Or install from source:"
     echo "  1. Install Go from https://go.dev/dl/"
-    echo "  2. Run: go install github.com/steveyegge/beads/cmd/bd@latest"
+    echo "  2. Run: go install github.com/plongitudes/beads/cmd/bd@latest"
     echo ""
     exit 1
 }

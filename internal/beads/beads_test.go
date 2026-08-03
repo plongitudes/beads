@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/git"
+	"github.com/plongitudes/beads/internal/git"
 )
 
 func TestFindDatabasePathEnvVar(t *testing.T) {

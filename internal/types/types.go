@@ -1053,10 +1053,10 @@ func (i *Issue) GetConstituents() []BondRef {
 //	ref := &EntityRef{
 //	    Name:     "polecat/Nux",
 //	    Platform: "gastown",
-//	    Org:      "steveyegge",
+//	    Org:      "plongitudes",
 //	    ID:       "polecat-nux",
 //	}
-//	uri := ref.URI() // "entity://hop/gastown/steveyegge/polecat-nux"
+//	uri := ref.URI() // "entity://hop/gastown/plongitudes/polecat-nux"
 type EntityRef struct {
 	// Name is the human-readable identifier (e.g., "polecat/Nux", "mayor")
 	Name string `json:"name,omitempty"`
@@ -1064,7 +1064,7 @@ type EntityRef struct {
 	// Platform identifies the execution context (e.g., "gastown", "github")
 	Platform string `json:"platform,omitempty"`
 
-	// Org identifies the organization (e.g., "steveyegge", "anthropics")
+	// Org identifies the organization (e.g., "plongitudes", "anthropics")
 	Org string `json:"org,omitempty"`
 
 	// ID is the unique identifier within the platform/org (e.g., "polecat-nux")

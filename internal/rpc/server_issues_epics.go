@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/util"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/util"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // containsLabel checks if a label exists in the list

@@ -8,7 +8,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Configuration
-TAP_REPO="https://github.com/steveyegge/homebrew-beads"
+TAP_REPO="https://github.com/plongitudes/homebrew-beads"
 TAP_DIR="${TAP_DIR:-/tmp/homebrew-beads}"
 FORMULA_FILE="Formula/bd.rb"
 
@@ -57,7 +57,7 @@ echo -e "${YELLOW}Step 1: Waiting for GitHub Actions release to complete...${NC}
 echo "This typically takes ~5 minutes. Checking every 30 seconds..."
 echo ""
 
-CHECKSUMS_URL="https://github.com/steveyegge/beads/releases/download/v${VERSION}/checksums.txt"
+CHECKSUMS_URL="https://github.com/plongitudes/beads/releases/download/v${VERSION}/checksums.txt"
 MAX_RETRIES=15  # 15 attempts * 30s = 7.5 minutes max wait
 RETRY_DELAY=30
 CHECKSUMS=""
@@ -81,7 +81,7 @@ for i in $(seq 1 $MAX_RETRIES); do
         echo "Possible issues:"
         echo "  • GitHub Actions release workflow is still running"
         echo "  • Git tag was not pushed: git push origin v${VERSION}"
-        echo "  • Release workflow failed (check: https://github.com/steveyegge/beads/actions)"
+        echo "  • Release workflow failed (check: https://github.com/plongitudes/beads/actions)"
         echo ""
         exit 1
     fi
@@ -204,7 +204,7 @@ fi
 # Success message
 echo -e "${GREEN}=== Homebrew Formula Update Complete ===${NC}\n"
 echo "Next steps:"
-echo "  1. Verify the formula update at: https://github.com/steveyegge/homebrew-beads"
+echo "  1. Verify the formula update at: https://github.com/plongitudes/homebrew-beads"
 echo "  2. Test locally:"
 echo "     brew update"
 echo "     brew upgrade bd"

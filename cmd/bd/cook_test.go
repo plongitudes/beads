@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"github.com/steveyegge/beads/internal/formula"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/formula"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // =============================================================================

@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/linear"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/linear"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // doPullFromLinear imports issues from Linear using the GraphQL API.

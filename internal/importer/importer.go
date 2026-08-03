@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/linear"
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/linear"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // OrphanHandling is an alias to sqlite.OrphanHandling for convenience

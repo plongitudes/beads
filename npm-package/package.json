@@ -22,17 +22,17 @@
     "git",
     "project-management"
   ],
-  "author": "Steve Yegge",
+  "author": "Beads Contributors",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/steveyegge/beads.git",
+    "url": "https://github.com/plongitudes/beads.git",
     "directory": "npm-package"
   },
   "bugs": {
-    "url": "https://github.com/steveyegge/beads/issues"
+    "url": "https://github.com/plongitudes/beads/issues"
   },
-  "homepage": "https://github.com/steveyegge/beads#readme",
+  "homepage": "https://github.com/plongitudes/beads#readme",
   "engines": {
     "node": ">=14.0.0"
   },

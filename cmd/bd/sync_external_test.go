@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/git"
+	"github.com/plongitudes/beads/internal/git"
 )
 
 // TestExternalBeadsDirE2E tests the full external BEADS_DIR flow.

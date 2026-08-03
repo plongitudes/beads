@@ -20,7 +20,7 @@ A curated list of community-built UIs, extensions, and integrations for Beads. R
 
 - **[beads-ui](https://github.com/mantoni/beads-ui)** - Local web interface with live updates and kanban board. Run with `npx beads-ui start`. Built by [@mantoni](https://github.com/mantoni). (Node.js)
 
-- **[Monitor WebUI](https://github.com/steveyegge/beads/tree/main/examples/monitor-webui)** - Real-time Issue Tracking Dashboard. Standalone web-based monitoring interface with clean, responsive design. Built by Beads core team. (Go)
+- **[Monitor WebUI](https://github.com/plongitudes/beads/tree/main/examples/monitor-webui)** - Real-time Issue Tracking Dashboard. Standalone web-based monitoring interface with clean, responsive design. Built by Beads core team. (Go)
 
 - **[beads-viz-prototype](https://github.com/mattbeane/beads-viz-prototype)** - Web-based visualization generating interactive HTML from `bd export`. Built by [@mattbeane](https://github.com/mattbeane). (Python)
 
@@ -44,7 +44,7 @@ A curated list of community-built UIs, extensions, and integrations for Beads. R
 
 ## Discussion
 
-See [GitHub Discussions #276](https://github.com/steveyegge/beads/discussions/276) for ongoing UI development conversations, design decisions, and community contributions.
+See [GitHub Discussions #276](https://github.com/plongitudes/beads/discussions/276) for ongoing UI development conversations, design decisions, and community contributions.
 
 ## Contributing
 

@@ -11,14 +11,14 @@ import (
 
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
-	"github.com/steveyegge/beads/cmd/bd/doctor/fix"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/cmd/bd/doctor/fix"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 const (
-	hooksExamplesURL = "https://github.com/steveyegge/beads/tree/main/examples/git-hooks"
-	hooksUpgradeURL  = "https://github.com/steveyegge/beads/issues/615"
+	hooksExamplesURL = "https://github.com/plongitudes/beads/tree/main/examples/git-hooks"
+	hooksUpgradeURL  = "https://github.com/plongitudes/beads/issues/615"
 )
 
 // bdShimMarker identifies bd shim hooks (GH#946)

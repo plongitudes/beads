@@ -139,7 +139,7 @@ def main():
         agent.run()
     except subprocess.CalledProcessError as e:
         print(f"Error running bd: {e}", file=sys.stderr)
-        print(f"Make sure bd is installed: go install github.com/steveyegge/beads/cmd/bd@latest")
+        print(f"Make sure bd is installed: go install github.com/plongitudes/beads/cmd/bd@latest")
         sys.exit(1)
     except KeyboardInterrupt:
         print("\n\n👋 Agent interrupted by user")

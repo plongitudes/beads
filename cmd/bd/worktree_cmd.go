@@ -9,9 +9,9 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/git"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/git"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // WorktreeInfo contains information about a git worktree

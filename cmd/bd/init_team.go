@@ -8,10 +8,10 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/storage"
-	"github.com/steveyegge/beads/internal/syncbranch"
-	"github.com/steveyegge/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/storage"
+	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/ui"
 )
 
 // runTeamWizard guides the user through team workflow setup

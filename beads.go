@@ -10,8 +10,8 @@ package beads
 import (
 	"context"
 
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // Storage is the interface for beads storage operations

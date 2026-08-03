@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // NOTE: createGraphEdgesFromIssueFields and createGraphEdgesFromUpdates removed

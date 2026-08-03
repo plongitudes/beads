@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 var configCmd = &cobra.Command{

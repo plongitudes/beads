@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // TestAutoFlushOnExit tests that FlushManager.Shutdown() performs final flush before exit

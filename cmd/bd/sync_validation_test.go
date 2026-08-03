@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // setupSyncValidationTest creates a test store and properly initializes globals.

@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/steveyegge/beads/internal/storage/sqlite/migrations"
+	"github.com/plongitudes/beads/internal/storage/sqlite/migrations"
 )
 
 // Migration represents a single database migration

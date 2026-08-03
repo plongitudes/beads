@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/cmd/bd/doctor"
+	"github.com/plongitudes/beads/cmd/bd/doctor"
 )
 
 func TestFindOrphanedIssues_ConvertsDoctorOutput(t *testing.T) {

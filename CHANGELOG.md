@@ -1421,7 +1421,7 @@ and muscle memory before v1.0.0 to avoid breakage.
 
 - **Windows winget manifest** (GH#524) - Prepare beads for Windows Package Manager
   - Added manifest files for winget submission
-  - Once merged to microsoft/winget-pkgs: `winget install SteveYegge.beads`
+  - Once merged to microsoft/winget-pkgs: `winget install Plongitudes.beads`
 
 - **Git commit configuration** (GH#600) - Control beads auto-commit behavior
   - `git.author` - Override commit author (useful for bots)
@@ -3014,7 +3014,7 @@ This release represents a major stability and performance improvement with **179
   - Previously ignored config for parent resurrection behavior
   - Now correctly honors user's preference for handling missing parents
 
-- **GoReleaser Homebrew Tap** (37ed10c): Fixed homebrew tap to point to `steveyegge/homebrew-beads`
+- **GoReleaser Homebrew Tap** (37ed10c): Fixed homebrew tap to point to `plongitudes/homebrew-beads`
   - Automated homebrew formula updates now work correctly
   - Resolves brew installation issues
 
@@ -3924,7 +3924,7 @@ No breaking changes. All changes are backward compatible:
 
 Simply pull the latest version and rebuild:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 # or
 git pull && go build -o bd ./cmd/bd
 ```
@@ -3941,7 +3941,7 @@ No breaking changes. All changes are backward compatible:
 
 Simply pull the latest version and rebuild:
 ```bash
-go install github.com/steveyegge/beads/cmd/bd@latest
+go install github.com/plongitudes/beads/cmd/bd@latest
 # or
 git pull && go build -o bd ./cmd/bd
 ```

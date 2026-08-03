@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/steveyegge/beads/cmd/bd/doctor/fix"
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/cmd/bd/doctor/fix"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 // GitignoreTemplate is the canonical .beads/.gitignore content

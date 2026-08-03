@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/storage/memory"
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/storage/memory"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 func TestValidateIssueUpdatable(t *testing.T) {

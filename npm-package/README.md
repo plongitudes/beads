@@ -97,13 +97,13 @@ This package downloads the appropriate native binary for your platform:
 
 ## Full Documentation
 
-For complete documentation, see the [beads GitHub repository](https://github.com/steveyegge/beads):
+For complete documentation, see the [beads GitHub repository](https://github.com/plongitudes/beads):
 
-- [Complete README](https://github.com/steveyegge/beads#readme)
-- [Quick Start Guide](https://github.com/steveyegge/beads/blob/main/docs/QUICKSTART.md)
-- [Installation Guide](https://github.com/steveyegge/beads/blob/main/docs/INSTALLING.md)
-- [FAQ](https://github.com/steveyegge/beads/blob/main/docs/FAQ.md)
-- [Troubleshooting](https://github.com/steveyegge/beads/blob/main/docs/TROUBLESHOOTING.md)
+- [Complete README](https://github.com/plongitudes/beads#readme)
+- [Quick Start Guide](https://github.com/plongitudes/beads/blob/main/docs/QUICKSTART.md)
+- [Installation Guide](https://github.com/plongitudes/beads/blob/main/docs/INSTALLING.md)
+- [FAQ](https://github.com/plongitudes/beads/blob/main/docs/FAQ.md)
+- [Troubleshooting](https://github.com/plongitudes/beads/blob/main/docs/TROUBLESHOOTING.md)
 
 ## Why npm Package vs WASM?
 
@@ -120,5 +120,5 @@ MIT - See [LICENSE](LICENSE) for details.
 
 ## Support
 
-- [GitHub Issues](https://github.com/steveyegge/beads/issues)
-- [Documentation](https://github.com/steveyegge/beads)
+- [GitHub Issues](https://github.com/plongitudes/beads/issues)
+- [Documentation](https://github.com/plongitudes/beads)

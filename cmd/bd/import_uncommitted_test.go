@@ -13,7 +13,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // TestImportWarnsUncommittedChanges tests bd-u4f5

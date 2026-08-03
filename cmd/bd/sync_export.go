@@ -10,11 +10,11 @@ import (
 	"slices"
 	"time"
 
-	"github.com/steveyegge/beads/internal/config"
-	"github.com/steveyegge/beads/internal/rpc"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/ui"
-	"github.com/steveyegge/beads/internal/validation"
+	"github.com/plongitudes/beads/internal/config"
+	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/ui"
+	"github.com/plongitudes/beads/internal/validation"
 )
 
 // ExportResult contains information needed to finalize an export after git commit.

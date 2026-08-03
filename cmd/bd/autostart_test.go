@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 	
-	"github.com/steveyegge/beads/internal/config"
+	"github.com/plongitudes/beads/internal/config"
 )
 
 func TestDaemonAutoStart(t *testing.T) {

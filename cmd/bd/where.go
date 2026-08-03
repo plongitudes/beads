@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/beads"
-	"github.com/steveyegge/beads/internal/utils"
+	"github.com/plongitudes/beads/internal/beads"
+	"github.com/plongitudes/beads/internal/utils"
 )
 
 // WhereResult contains information about the active beads location

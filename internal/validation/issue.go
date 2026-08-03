@@ -3,7 +3,7 @@ package validation
 import (
 	"fmt"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // IssueValidator validates an issue and returns an error if validation fails.

@@ -12,11 +12,11 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"github.com/steveyegge/beads/internal/debug"
-	"github.com/steveyegge/beads/internal/storage/sqlite"
-	"github.com/steveyegge/beads/internal/types"
-	"github.com/steveyegge/beads/internal/util"
-	"github.com/steveyegge/beads/internal/validation"
+	"github.com/plongitudes/beads/internal/debug"
+	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/plongitudes/beads/internal/types"
+	"github.com/plongitudes/beads/internal/util"
+	"github.com/plongitudes/beads/internal/validation"
 )
 
 // countIssuesInJSONL counts the number of issues in a JSONL file

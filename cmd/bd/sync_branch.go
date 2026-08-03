@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/steveyegge/beads/internal/syncbranch"
+	"github.com/plongitudes/beads/internal/syncbranch"
 )
 
 // getCurrentBranch returns the name of the current git branch
@@ -182,7 +182,7 @@ func mergeSyncBranch(ctx context.Context, dryRun bool) error {
 
 // isExternalBeadsDir checks if the beads directory is in a different git repo than cwd.
 // This is used to detect when BEADS_DIR points to a separate repository.
-// Contributed by dand-oss (https://github.com/steveyegge/beads/pull/533)
+// Contributed by dand-oss (https://github.com/plongitudes/beads/pull/533)
 //
 // GH#810: Use git-common-dir for comparison instead of repo root.
 // For bare repo worktrees, GetRepoRoot returns incorrect values, causing
@@ -238,7 +238,7 @@ func getGitCommonDir(ctx context.Context, path string) (string, error) {
 // getRepoRootFromPath returns the git repository root for a given path.
 // Unlike syncbranch.GetRepoRoot which uses cwd, this allows getting the repo root
 // for any path.
-// Contributed by dand-oss (https://github.com/steveyegge/beads/pull/533)
+// Contributed by dand-oss (https://github.com/plongitudes/beads/pull/533)
 func getRepoRootFromPath(ctx context.Context, path string) (string, error) {
 	cmd := exec.CommandContext(ctx, "git", "-C", path, "rev-parse", "--show-toplevel")
 	output, err := cmd.Output()
@@ -251,7 +251,7 @@ func getRepoRootFromPath(ctx context.Context, path string) (string, error) {
 // commitToExternalBeadsRepo commits changes directly to an external beads repo.
 // Used when BEADS_DIR points to a different git repository than cwd.
 // This bypasses the worktree-based sync which fails when beads dir is external.
-// Contributed by dand-oss (https://github.com/steveyegge/beads/pull/533)
+// Contributed by dand-oss (https://github.com/plongitudes/beads/pull/533)
 func commitToExternalBeadsRepo(ctx context.Context, beadsDir, message string, push bool) (bool, error) {
 	repoRoot, err := getRepoRootFromPath(ctx, beadsDir)
 	if err != nil {
@@ -300,7 +300,7 @@ func commitToExternalBeadsRepo(ctx context.Context, beadsDir, message string, pu
 
 // pullFromExternalBeadsRepo pulls changes in an external beads repo.
 // Used when BEADS_DIR points to a different git repository than cwd.
-// Contributed by dand-oss (https://github.com/steveyegge/beads/pull/533)
+// Contributed by dand-oss (https://github.com/plongitudes/beads/pull/533)
 func pullFromExternalBeadsRepo(ctx context.Context, beadsDir string) error {
 	repoRoot, err := getRepoRootFromPath(ctx, beadsDir)
 	if err != nil {

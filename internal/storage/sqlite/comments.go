@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/steveyegge/beads/internal/types"
+	"github.com/plongitudes/beads/internal/types"
 )
 
 // AddIssueComment adds a comment to an issue

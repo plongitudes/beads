@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/steveyegge/beads/internal/autoimport"
+	"github.com/plongitudes/beads/internal/autoimport"
 )
 
 // ensureDatabaseFresh checks if the database is in sync with JSONL before read operations.

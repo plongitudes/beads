@@ -7,7 +7,7 @@
 
 Install:
 ```bash
-brew tap steveyegge/beads && brew install bd
+brew tap plongitudes/beads && brew install bd
 ```
 
 Initialize:
@@ -52,7 +52,7 @@ Quick fixes for common issues:
 - Circular Dependencies: `bd doctor` (diagnose only, NEVER --fix)
 - Sync Failures: `bd sync --import-only`
 
-Full runbooks: https://steveyegge.github.io/beads/recovery/
+Full runbooks: https://plongitudes.github.io/beads/recovery/
 
 ## Session Close Protocol
 
@@ -65,13 +65,13 @@ WARNING: Skipping sync causes data loss in multi-agent workflows.
 
 ## Documentation
 
-- Full docs: https://steveyegge.github.io/beads/
-- CLI reference: https://steveyegge.github.io/beads/cli-reference
-- Agent guide: https://steveyegge.github.io/beads/integrations/claude-code
-- Complete LLM context: https://steveyegge.github.io/beads/llms-full.txt
+- Full docs: https://plongitudes.github.io/beads/
+- CLI reference: https://plongitudes.github.io/beads/cli-reference
+- Agent guide: https://plongitudes.github.io/beads/integrations/claude-code
+- Complete LLM context: https://plongitudes.github.io/beads/llms-full.txt
 
 ## Links
 
-- GitHub: https://github.com/steveyegge/beads
+- GitHub: https://github.com/plongitudes/beads
 - npm: https://www.npmjs.com/package/@beads/bd
 - PyPI (MCP): https://pypi.org/project/beads-mcp/

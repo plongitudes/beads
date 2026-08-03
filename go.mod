@@ -1,4 +1,4 @@
-module github.com/steveyegge/beads
+module github.com/plongitudes/beads
 
 go 1.24.0
 

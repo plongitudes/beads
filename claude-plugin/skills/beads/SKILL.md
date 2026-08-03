@@ -6,7 +6,7 @@ description: >
   or needs context recovery after compaction.
 allowed-tools: "Read,Bash(bd:*)"
 version: "0.43.0"
-author: "Steve Yegge <https://github.com/steveyegge>"
+author: "Beads Contributors <https://github.com/plongitudes>"
 license: "MIT"
 ---
 
@@ -97,4 +97,4 @@ Essential commands: `bd ready`, `bd create`, `bd show`, `bd update`, `bd close`,
 ## Full Documentation
 
 - **bd prime**: AI-optimized workflow context
-- **GitHub**: [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
+- **GitHub**: [github.com/plongitudes/beads](https://github.com/plongitudes/beads)
