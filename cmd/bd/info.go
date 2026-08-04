@@ -297,6 +297,18 @@ type VersionChange struct {
 // versionChanges contains agent-actionable changes for recent versions
 var versionChanges = []VersionChange{
 	{
+		Version: "0.48.0",
+		Date:    "2026-08-03",
+		Changes: []string{
+			"CHANGE: Module path renamed to github.com/plongitudes/beads (fork)",
+			"CHANGE: bd init installs the same shim hooks as bd hooks install (bd-g031o)",
+			"CHANGE: Install/upgrade hints are build-from-source (go install)",
+			"REMOVED: Gas Town agent-identity trailers in prepare-commit-msg (bd-c2k7z)",
+			"REMOVED: Distribution channels - build from source only (bd-25gsh)",
+			"REMOVED: Stale examples/git-hooks - use bd hooks install",
+		},
+	},
+	{
 		Version: "0.47.1",
 		Date:    "2026-01-12",
 		Changes: []string{

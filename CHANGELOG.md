@@ -7,6 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.48.0] - 2026-08-03
+
+## [0.48.0] - 2026-08-03
+
+First release of the plongitudes personal fork. Built from source only;
+distribution channels are disabled.
+
+### Changed
+
+- **Module path renamed** to `github.com/plongitudes/beads` (bd-ofx46)
+  - All upstream steveyegge references retargeted across code, docs, and website
+- **`bd init` installs the same shim hooks as `bd hooks install`** (bd-g031o)
+  - Fixes missing sync-branch guard, `BEADS_NO_AUTO_STAGE` support, and version markers
+  - Adds pre-push and post-checkout hooks on init
+- **Install/upgrade hints are build-from-source** - `go install github.com/plongitudes/beads/cmd/bd@latest`
+- **`bd doctor` update check** points at this fork's releases and degrades gracefully when none exist (bd-f7m0h)
+
+### Removed
+
+- **Gas Town agent-identity feature** (bd-c2k7z, bd-g031o)
+  - `prepare-commit-msg` hook no longer appends Executed-By/Rig/Role trailers
+  - Stale shims from older installs dispatch as a no-op instead of blocking commits
+  - Upstream `gt` Claude hooks and handoff workflow removed from `.claude/`
+- **Distribution channels** (bd-25gsh, bd-pqi77)
+  - Release/homebrew/pypi workflows disabled, npm package marked private,
+    homebrew/winget update scripts guarded
+- **Stale `examples/git-hooks/`** - superseded by `bd hooks install`
+- **Inherited upstream issue tracker history** - fresh-start reset to fork-local issues
+
 ## [0.47.1] - 2026-01-12
 
 ### Added
