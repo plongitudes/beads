@@ -124,4 +124,3 @@ func TestIsLikelyHashAllLetters(t *testing.T) {
 		})
 	}
 }
-

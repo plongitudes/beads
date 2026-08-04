@@ -529,9 +529,9 @@ func FindJSONLPath(dbPath string) string {
 
 // DatabaseInfo contains information about a discovered beads database
 type DatabaseInfo struct {
-	Path      string // Full path to the .db file
-	BeadsDir  string // Parent .beads directory
-	IssueCount int   // Number of issues (-1 if unknown)
+	Path       string // Full path to the .db file
+	BeadsDir   string // Parent .beads directory
+	IssueCount int    // Number of issues (-1 if unknown)
 }
 
 // findGitRoot returns the root directory of the current git repository,

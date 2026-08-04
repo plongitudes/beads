@@ -50,34 +50,10 @@ func CheckCLIVersion(cliVersion string) DoctorCheck {
 	}
 }
 
-// getUpgradeCommand returns the appropriate upgrade command based on how bd was installed.
-// Detects Homebrew on macOS/Linux, and falls back to the install script on all platforms.
+// getUpgradeCommand returns the upgrade command. This fork is built from
+// source; there are no managed distribution channels.
 func getUpgradeCommand() string {
-	// Get the executable path
-	execPath, err := os.Executable()
-	if err != nil {
-		return "curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash"
-	}
-
-	// Resolve symlinks to get the real path
-	realPath, err := filepath.EvalSymlinks(execPath)
-	if err != nil {
-		realPath = execPath
-	}
-
-	// Normalize to lowercase for comparison
-	lowerPath := strings.ToLower(realPath)
-
-	// Check for Homebrew installation (macOS/Linux)
-	// Homebrew paths: /opt/homebrew/Cellar/bd, /usr/local/Cellar/bd, /home/linuxbrew/.linuxbrew/Cellar/bd
-	if strings.Contains(lowerPath, "/cellar/bd/") ||
-		strings.Contains(lowerPath, "/homebrew/") ||
-		strings.Contains(lowerPath, "/linuxbrew/") {
-		return "brew upgrade bd"
-	}
-
-	// Default to install script (works on all platforms including Windows via WSL/Git Bash)
-	return "curl -fsSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash"
+	return "go install github.com/plongitudes/beads/cmd/bd@latest"
 }
 
 // localVersionFile is the gitignored file that stores the last bd version used locally.

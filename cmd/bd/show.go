@@ -7,12 +7,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 var showCmd = &cobra.Command{
@@ -517,7 +517,6 @@ var showCmd = &cobra.Command{
 		}
 	},
 }
-
 
 // formatShortIssue returns a compact one-line representation of an issue
 // Format: STATUS_ICON ID PRIORITY [Type] Title

@@ -277,7 +277,7 @@ func autoImportIfNewer() {
 	if err := store.ClearAllExportHashes(ctx); err != nil {
 		fmt.Fprintf(os.Stderr, "Warning: failed to clear export_hashes before import: %v\n", err)
 	}
-	
+
 	// Use shared import logic
 	opts := ImportOptions{
 		DryRun:               false,
@@ -357,8 +357,6 @@ func autoImportIfNewer() {
 	}
 }
 
-
-
 // markDirtyAndScheduleFlush marks the database as dirty and schedules a flush
 // markDirtyAndScheduleFlush marks the database as dirty and schedules a debounced
 // export to JSONL. Uses FlushManager's event-driven architecture.
@@ -407,11 +405,11 @@ func clearAutoFlushState() {
 //
 // Atomic write pattern:
 //
-//	1. Create temp file with PID suffix: issues.jsonl.tmp.12345
-//	2. Write all issues as JSONL to temp file
-//	3. Close temp file
-//	4. Atomic rename: temp → target
-//	5. Set file permissions to 0644
+//  1. Create temp file with PID suffix: issues.jsonl.tmp.12345
+//  2. Write all issues as JSONL to temp file
+//  3. Close temp file
+//  4. Atomic rename: temp → target
+//  5. Set file permissions to 0644
 //
 // Error handling: Returns error on any failure. Cleanup is guaranteed via defer.
 // Thread-safe: No shared state access. Safe to call from multiple goroutines.
@@ -424,12 +422,12 @@ func validateJSONLIntegrity(ctx context.Context, jsonlPath string) (bool, error)
 	if err != nil {
 		return false, fmt.Errorf("failed to get stored JSONL hash: %w", err)
 	}
-	
+
 	// If no hash stored, this is first export - skip validation
 	if storedHash == "" {
 		return false, nil
 	}
-	
+
 	// Read current JSONL file
 	jsonlData, err := os.ReadFile(jsonlPath)
 	if err != nil {
@@ -447,12 +445,12 @@ func validateJSONLIntegrity(ctx context.Context, jsonlPath string) (bool, error)
 		}
 		return false, fmt.Errorf("failed to read JSONL file: %w", err)
 	}
-	
+
 	// Compute current JSONL hash
 	hasher := sha256.New()
 	hasher.Write(jsonlData)
 	currentHash := hex.EncodeToString(hasher.Sum(nil))
-	
+
 	// Compare hashes
 	if currentHash != storedHash {
 		fmt.Fprintf(os.Stderr, "⚠️  WARNING: JSONL file hash mismatch detected\n")
@@ -469,7 +467,7 @@ func validateJSONLIntegrity(ctx context.Context, jsonlPath string) (bool, error)
 		}
 		return true, nil // Signal full export needed
 	}
-	
+
 	return false, nil
 }
 
@@ -498,15 +496,15 @@ func writeJSONLAtomic(jsonlPath string, issues []*types.Issue) ([]string, error)
 	encoder := json.NewEncoder(f)
 	skippedCount := 0
 	exportedIDs := make([]string, 0, len(issues))
-	
+
 	for _, issue := range issues {
 		if err := encoder.Encode(issue); err != nil {
-		 return nil, fmt.Errorf("failed to encode issue %s: %w", issue.ID, err)
+			return nil, fmt.Errorf("failed to encode issue %s: %w", issue.ID, err)
 		}
-		
+
 		exportedIDs = append(exportedIDs, issue.ID)
 	}
-	
+
 	// Report skipped issues if any (helps debugging)
 	if skippedCount > 0 {
 		debug.Logf("auto-flush skipped %d issue(s) with timestamp-only changes", skippedCount)

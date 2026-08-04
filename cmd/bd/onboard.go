@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 const copilotInstructionsContent = `# GitHub Copilot Instructions
@@ -13,7 +13,7 @@ const copilotInstructionsContent = `# GitHub Copilot Instructions
 ## Issue Tracking
 
 This project uses **bd (beads)** for issue tracking.
-Run ` + "`bd prime`" + ` for workflow context, or install hooks (` + "`bd hooks install`" + `) for auto-injection.
+Run ` + "`bd prime`" + ` for workflow context, or run ` + "`bd setup claude`" + ` for auto-injection at session start.
 
 **Quick reference:**
 - ` + "`bd ready`" + ` - Find unblocked work
@@ -26,7 +26,7 @@ For full workflow details: ` + "`bd prime`" + ``
 const agentsContent = `## Issue Tracking
 
 This project uses **bd (beads)** for issue tracking.
-Run ` + "`bd prime`" + ` for workflow context, or install hooks (` + "`bd hooks install`" + `) for auto-injection.
+Run ` + "`bd prime`" + ` for workflow context, or run ` + "`bd setup claude`" + ` for auto-injection at session start.
 
 **Quick reference:**
 - ` + "`bd ready`" + ` - Find unblocked work
@@ -86,7 +86,7 @@ func renderOnboardInstructions(w io.Writer) error {
 	if err := writef("   • %s provides dynamic workflow context (~80 lines)\n", ui.RenderAccent("bd prime")); err != nil {
 		return err
 	}
-	if err := writef("   • %s auto-injects bd prime at session start\n", ui.RenderAccent("bd hooks install")); err != nil {
+	if err := writef("   • %s auto-injects bd prime at session start\n", ui.RenderAccent("bd setup claude")); err != nil {
 		return err
 	}
 	if err := writeln("   • AGENTS.md only needs this minimal pointer, not full instructions"); err != nil {
@@ -114,7 +114,7 @@ workflow context. This approach:
 
   • Keeps AGENTS.md lean (doesn't bloat with instructions)
   • bd prime provides dynamic, always-current workflow details
-  • Hooks auto-inject bd prime at session start
+  • bd setup claude auto-injects bd prime at session start
 
 The old approach of embedding full instructions in AGENTS.md is deprecated
 because it wasted tokens and got stale when bd upgraded.`,

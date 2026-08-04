@@ -6,9 +6,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/config"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/spf13/cobra"
 )
 
 var repoCmd = &cobra.Command{

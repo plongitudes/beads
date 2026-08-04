@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/formula"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 // stepTypeToIssueType converts a formula step type string to a types.IssueType.
@@ -658,7 +658,6 @@ func collectSteps(steps []*formula.Step, parentID string,
 		}
 	}
 }
-
 
 // resolveAndCookFormula loads a formula by name, resolves it, applies all transformations,
 // and returns an in-memory TemplateSubgraph ready for instantiation.

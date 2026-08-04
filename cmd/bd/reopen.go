@@ -1,14 +1,16 @@
 package main
+
 import (
 	"encoding/json"
 	"fmt"
-	"os"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
+	"os"
 )
+
 var reopenCmd = &cobra.Command{
 	Use:     "reopen [id...]",
 	GroupID: "issues",
@@ -136,6 +138,7 @@ This is more explicit than 'bd update --status open' and emits a Reopened event.
 		}
 	},
 }
+
 func init() {
 	reopenCmd.Flags().StringP("reason", "r", "", "Reason for reopening")
 	reopenCmd.ValidArgsFunction = issueIDCompletion

@@ -8,14 +8,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/git"
 	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/spf13/cobra"
 )
 
 var migrateSyncCmd = &cobra.Command{
-	Use:     "sync <branch-name>",
-	Short:   "Migrate to sync.branch workflow for multi-clone setups",
+	Use:   "sync <branch-name>",
+	Short: "Migrate to sync.branch workflow for multi-clone setups",
 	Long: `Migrate to using a dedicated sync branch for beads data.
 
 This command configures the repository to commit .beads changes to a separate

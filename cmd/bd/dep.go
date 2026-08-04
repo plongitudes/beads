@@ -8,7 +8,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/routing"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/storage"
@@ -16,6 +15,7 @@ import (
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 // getBeadsDir returns the .beads directory path, derived from the global dbPath.
@@ -539,7 +539,7 @@ var depRemoveCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		CheckReadonly("dep remove")
 		ctx := rootCtx
-		
+
 		// Resolve partial IDs first
 		var fromID, toID string
 		if daemonClient != nil {
@@ -598,7 +598,7 @@ var depRemoveCmd = &cobra.Command{
 		// Direct mode
 		fullFromID := fromID
 		fullToID := toID
-		
+
 		if err := store.RemoveDependency(ctx, fullFromID, fullToID, actor); err != nil {
 			FatalErrorRespectJSON("%v", err)
 		}

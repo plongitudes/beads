@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/configfile"
+	"github.com/spf13/cobra"
 )
 
 var upgradeCmd = &cobra.Command{

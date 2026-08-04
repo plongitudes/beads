@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var duplicateCmd = &cobra.Command{
@@ -144,9 +144,9 @@ func runDuplicate(cmd *cobra.Command, args []string) error {
 
 	if jsonOutput {
 		result := map[string]interface{}{
-			"duplicate":  duplicateID,
-			"canonical":  canonicalID,
-			"status":     "closed",
+			"duplicate": duplicateID,
+			"canonical": canonicalID,
+			"status":    "closed",
 		}
 		encoder := json.NewEncoder(os.Stdout)
 		encoder.SetIndent("", "  ")
@@ -242,9 +242,9 @@ func runSupersede(cmd *cobra.Command, args []string) error {
 
 	if jsonOutput {
 		result := map[string]interface{}{
-			"superseded":    oldID,
-			"replacement":   newID,
-			"status":        "closed",
+			"superseded":  oldID,
+			"replacement": newID,
+			"status":      "closed",
 		}
 		encoder := json.NewEncoder(os.Stdout)
 		encoder.SetIndent("", "  ")

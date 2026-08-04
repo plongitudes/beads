@@ -8,7 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
+	_ "github.com/ncruces/go-sqlite3/driver"
+	_ "github.com/ncruces/go-sqlite3/embed"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/configfile"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
@@ -16,8 +17,7 @@ import (
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
-	_ "github.com/ncruces/go-sqlite3/driver"
-	_ "github.com/ncruces/go-sqlite3/embed"
+	"github.com/spf13/cobra"
 )
 
 var migrateCmd = &cobra.Command{
@@ -65,32 +65,32 @@ Subcommands:
 		// Find .beads directory
 		beadsDir := beads.FindBeadsDir()
 		if beadsDir == "" {
-		if jsonOutput {
-		outputJSON(map[string]interface{}{
-		"error":   "no_beads_directory",
-		"message": "No .beads directory found. Run 'bd init' first.",
-		})
-		os.Exit(1)
-		} else {
-		FatalErrorWithHint("no .beads directory found", "run 'bd init' to initialize bd")
-		}
+			if jsonOutput {
+				outputJSON(map[string]interface{}{
+					"error":   "no_beads_directory",
+					"message": "No .beads directory found. Run 'bd init' first.",
+				})
+				os.Exit(1)
+			} else {
+				FatalErrorWithHint("no .beads directory found", "run 'bd init' to initialize bd")
+			}
 		}
 
 		// Load config to get target database name (respects user's config.json)
-	cfg, err := loadOrCreateConfig(beadsDir)
-	if err != nil {
-		if jsonOutput {
-			outputJSON(map[string]interface{}{
-				"error":   "config_load_failed",
-				"message": err.Error(),
-			})
-		} else {
-			fmt.Fprintf(os.Stderr, "Error: failed to load config: %v\n", err)
+		cfg, err := loadOrCreateConfig(beadsDir)
+		if err != nil {
+			if jsonOutput {
+				outputJSON(map[string]interface{}{
+					"error":   "config_load_failed",
+					"message": err.Error(),
+				})
+			} else {
+				fmt.Fprintf(os.Stderr, "Error: failed to load config: %v\n", err)
+			}
+			os.Exit(1)
 		}
-		os.Exit(1)
-	}
 
-	// Detect all database files
+		// Detect all database files
 		databases, err := detectDatabases(beadsDir)
 		if err != nil {
 			if jsonOutput {
@@ -195,7 +195,7 @@ Subcommands:
 			} else {
 				fmt.Println("Dry run mode - no changes will be made")
 				if needsMigration {
-				fmt.Printf("Would migrate: %s → %s\n", filepath.Base(oldDBs[0].path), cfg.Database)
+					fmt.Printf("Would migrate: %s → %s\n", filepath.Base(oldDBs[0].path), cfg.Database)
 				}
 				if needsVersionUpdate {
 					fmt.Printf("Would update version: %s → %s\n", currentDB.version, Version)
@@ -281,7 +281,7 @@ Subcommands:
 			}
 
 			ctx := rootCtx
-			
+
 			// Detect and set issue_prefix if missing (fixes GH #201)
 			prefix, err := store.GetConfig(ctx, "issue_prefix")
 			if err != nil || prefix == "" {
@@ -308,7 +308,7 @@ Subcommands:
 					}
 				}
 			}
-			
+
 			if err := store.SetMetadata(ctx, "bd_version", Version); err != nil {
 				_ = store.Close()
 				if jsonOutput {
@@ -321,7 +321,7 @@ Subcommands:
 				}
 				os.Exit(1)
 			}
-			
+
 			// Close and checkpoint to finalize the WAL
 			if err := store.Close(); err != nil {
 				if !jsonOutput {
@@ -381,7 +381,7 @@ Subcommands:
 				// Don't fail migration if config save fails
 			}
 		}
-		
+
 		// Final status
 		if jsonOutput {
 			outputJSON(map[string]interface{}{
@@ -475,8 +475,6 @@ func getDBVersion(dbPath string) string {
 
 	return "unknown"
 }
-
-
 
 func formatDBList(dbs []*dbInfo) []map[string]string {
 	result := make([]map[string]string, len(dbs))
@@ -617,12 +615,12 @@ func loadOrCreateConfig(beadsDir string) (*configfile.Config, error) {
 	if err != nil {
 		return nil, err
 	}
-	
+
 	// Create default if no config exists
 	if cfg == nil {
 		cfg = configfile.DefaultConfig()
 	}
-	
+
 	return cfg, nil
 }
 
@@ -630,7 +628,7 @@ func loadOrCreateConfig(beadsDir string) (*configfile.Config, error) {
 func cleanupWALFiles(dbPath string) {
 	walPath := dbPath + "-wal"
 	shmPath := dbPath + "-shm"
-	
+
 	// Best effort cleanup - don't fail if these don't exist
 	_ = os.Remove(walPath) // WAL may not exist
 	_ = os.Remove(shmPath) // SHM may not exist
@@ -684,7 +682,7 @@ func handleInspect() {
 		}
 		os.Exit(1)
 	}
-	
+
 	// If database doesn't exist, return inspection with defaults
 	if !dbExists {
 		result := map[string]interface{}{
@@ -699,7 +697,7 @@ func handleInspect() {
 			"warnings":            []string{"Database does not exist - run 'bd init' first"},
 			"invariants_to_check": sqlite.GetInvariantNames(),
 		}
-		
+
 		if jsonOutput {
 			outputJSON(result)
 		} else {
@@ -755,7 +753,7 @@ func handleInspect() {
 
 	// Get registered migrations (all migrations are idempotent and run on every open)
 	registeredMigrations := sqlite.ListMigrations()
-	
+
 	// Build invariants list
 	invariantNames := sqlite.GetInvariantNames()
 
@@ -796,21 +794,21 @@ func handleInspect() {
 		fmt.Printf("Schema Version: %s\n", schemaVersion)
 		fmt.Printf("Issue Count: %d\n", issueCount)
 		fmt.Printf("Registered Migrations: %d\n", len(registeredMigrations))
-		
+
 		if len(warnings) > 0 {
 			fmt.Println("\nWarnings:")
 			for _, w := range warnings {
 				fmt.Printf("  ⚠ %s\n", w)
 			}
 		}
-		
+
 		if len(missingConfig) > 0 {
 			fmt.Println("\nMissing Config:")
 			for _, k := range missingConfig {
 				fmt.Printf("  - %s\n", k)
 			}
 		}
-		
+
 		fmt.Printf("\nInvariants to Check: %d\n", len(invariantNames))
 		for _, inv := range invariantNames {
 			fmt.Printf("  ✓ %s\n", inv)
@@ -923,9 +921,9 @@ func handleToSeparateBranch(branch string, dryRun bool) {
 	if current == b {
 		if jsonOutput {
 			outputJSON(map[string]interface{}{
-				"status":   "noop",
-				"branch":   b,
-				"message":  "sync.branch already set to this value",
+				"status":  "noop",
+				"branch":  b,
+				"message": "sync.branch already set to this value",
 			})
 		} else {
 			fmt.Printf("%s\n", ui.RenderPass(fmt.Sprintf("✓ sync.branch already set to '%s'", b)))

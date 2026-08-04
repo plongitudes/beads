@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var molProgressCmd = &cobra.Command{

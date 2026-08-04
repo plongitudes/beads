@@ -13,11 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/debug"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 	"golang.org/x/term"
 )
 
@@ -553,7 +553,7 @@ func checkUncommittedChanges(filePath string, result *ImportResult) {
 		// Get line counts for context
 		workingTreeLines := countLines(filePath)
 		headLines := countLinesInGitHEAD(filePath, workDir)
-		
+
 		fmt.Fprintf(os.Stderr, "\n⚠️  Warning: %s has uncommitted changes\n", filePath)
 		fmt.Fprintf(os.Stderr, "   Working tree: %d lines\n", workingTreeLines)
 		if headLines > 0 {

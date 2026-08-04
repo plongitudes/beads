@@ -10,11 +10,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads"
 	"github.com/plongitudes/beads/internal/config"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/spf13/cobra"
 )
 
 // isDaemonAutoSyncing checks if daemon is running with auto-commit and auto-push enabled.

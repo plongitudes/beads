@@ -6,9 +6,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/config"
 	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/spf13/cobra"
 )
 
 var configCmd = &cobra.Command{

@@ -9,11 +9,11 @@ import (
 	"strings"
 
 	"github.com/charmbracelet/huh"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 // createFormRawInput holds the raw string values from the form UI.

@@ -10,9 +10,9 @@ import (
 
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/cmd/bd/doctor"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 // Status constants for doctor checks
@@ -763,4 +763,3 @@ func printDiagnostics(result doctorResult) {
 		fmt.Printf("%s\n", ui.RenderPass("✓ All checks passed"))
 	}
 }
-

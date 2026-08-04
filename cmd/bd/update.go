@@ -6,13 +6,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/hooks"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/timeparsing"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/validation"
+	"github.com/spf13/cobra"
 )
 
 var updateCmd = &cobra.Command{

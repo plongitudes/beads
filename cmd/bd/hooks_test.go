@@ -17,6 +17,9 @@ func TestGetEmbeddedHooks(t *testing.T) {
 	}
 
 	expectedHooks := []string{"pre-commit", "post-merge", "pre-push", "post-checkout"}
+	if len(hooks) != len(expectedHooks) {
+		t.Errorf("getEmbeddedHooks() returned %d hooks, want %d", len(hooks), len(expectedHooks))
+	}
 	for _, hookName := range expectedHooks {
 		content, ok := hooks[hookName]
 		if !ok {

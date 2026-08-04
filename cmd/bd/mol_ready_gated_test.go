@@ -436,4 +436,3 @@ func TestFindGateReadyMolecules_MultipleGates(t *testing.T) {
 		t.Errorf("Expected 2 gate-ready molecules, got %d", len(molecules))
 	}
 }
-

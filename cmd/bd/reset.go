@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/git"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 var resetCmd = &cobra.Command{
@@ -206,7 +206,6 @@ func showResetPreview(items []resetItem) {
 		})
 		return
 	}
-
 
 	fmt.Println(ui.RenderWarn("Reset preview (dry-run mode)"))
 	fmt.Println()

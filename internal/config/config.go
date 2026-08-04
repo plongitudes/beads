@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/viper"
 	"github.com/plongitudes/beads/internal/debug"
+	"github.com/spf13/viper"
 )
 
 var v *viper.Viper

@@ -333,8 +333,7 @@ For immediate export (no 5-second wait) and guaranteed import after git operatio
 ### Using the Installer
 
 ```bash
-cd examples/git-hooks
-./install.sh
+bd hooks install
 ```
 
 ### Manual Setup

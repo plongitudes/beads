@@ -15,21 +15,21 @@ import (
 
 // FileWatcher monitors JSONL and git ref changes using filesystem events or polling.
 type FileWatcher struct {
-	watcher        *fsnotify.Watcher
-	debouncer      *Debouncer
-	jsonlPath      string
-	parentDir      string
-	pollingMode    bool
-	lastModTime    time.Time
-	lastExists     bool
-	lastSize       int64
-	pollInterval   time.Duration
-	gitRefsPath    string
-	gitHeadPath    string
+	watcher         *fsnotify.Watcher
+	debouncer       *Debouncer
+	jsonlPath       string
+	parentDir       string
+	pollingMode     bool
+	lastModTime     time.Time
+	lastExists      bool
+	lastSize        int64
+	pollInterval    time.Duration
+	gitRefsPath     string
+	gitHeadPath     string
 	lastHeadModTime time.Time
-	lastHeadExists bool
-	cancel         context.CancelFunc
-	wg             sync.WaitGroup // Track goroutines for graceful shutdown
+	lastHeadExists  bool
+	cancel          context.CancelFunc
+	wg              sync.WaitGroup // Track goroutines for graceful shutdown
 	// Log deduplication: track last log times to avoid duplicate messages
 	lastFileLogTime   time.Time
 	lastGitRefLogTime time.Time
@@ -120,7 +120,7 @@ func NewFileWatcher(jsonlPath string, onChanged func()) (*FileWatcher, error) {
 		_ = watcher.Add(fw.gitRefsPath) // Ignore error - not all setups have this
 	}
 	if fw.gitHeadPath != "" {
-		_ = watcher.Add(fw.gitHeadPath)  // Ignore error - not all setups have this
+		_ = watcher.Add(fw.gitHeadPath) // Ignore error - not all setups have this
 	}
 
 	return fw, nil
@@ -195,8 +195,8 @@ func (fw *FileWatcher) Start(ctx context.Context, log daemonLogger) {
 
 				// Handle JSONL removal/rename (e.g., git checkout)
 				if event.Name == fw.jsonlPath && (event.Op&fsnotify.Remove != 0 || event.Op&fsnotify.Rename != 0) {
-				log.log("JSONL removed/renamed, re-establishing watch")
-				_ = fw.watcher.Remove(fw.jsonlPath)
+					log.log("JSONL removed/renamed, re-establishing watch")
+					_ = fw.watcher.Remove(fw.jsonlPath)
 					// Retry with exponential backoff
 					fw.reEstablishWatch(ctx, log)
 					continue
@@ -235,7 +235,7 @@ func (fw *FileWatcher) Start(ctx context.Context, log daemonLogger) {
 // reEstablishWatch attempts to re-add the JSONL watch with exponential backoff.
 func (fw *FileWatcher) reEstablishWatch(ctx context.Context, log daemonLogger) {
 	delays := []time.Duration{50 * time.Millisecond, 100 * time.Millisecond, 200 * time.Millisecond, 400 * time.Millisecond}
-	
+
 	for _, delay := range delays {
 		select {
 		case <-ctx.Done():

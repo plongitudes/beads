@@ -76,7 +76,7 @@ var requiredPatterns = []string{
 // CheckGitignore checks if .beads/.gitignore is up to date
 func CheckGitignore() DoctorCheck {
 	gitignorePath := filepath.Join(".beads", ".gitignore")
-	
+
 	// Check if file exists
 	content, err := os.ReadFile(gitignorePath) // #nosec G304 -- path is hardcoded
 	if err != nil {
@@ -151,8 +151,8 @@ func CheckIssuesTracking() DoctorCheck {
 	if _, err := os.Stat(issuesPath); os.IsNotExist(err) {
 		// File doesn't exist yet - not an error, bd init may not have been run
 		return DoctorCheck{
-			Name:   "Issues Tracking",
-			Status: "ok",
+			Name:    "Issues Tracking",
+			Status:  "ok",
 			Message: "No issues.jsonl yet (will be created on first issue)",
 		}
 	}

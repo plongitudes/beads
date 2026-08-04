@@ -9,11 +9,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var stateCmd = &cobra.Command{
@@ -313,12 +313,12 @@ The --reason flag provides context for the event bead (recommended).`,
 
 		if jsonOutput {
 			result := map[string]interface{}{
-				"issue_id":   fullID,
-				"dimension":  dimension,
-				"old_value":  oldValue,
-				"new_value":  newValue,
-				"event_id":   eventID,
-				"changed":    true,
+				"issue_id":  fullID,
+				"dimension": dimension,
+				"old_value": oldValue,
+				"new_value": newValue,
+				"event_id":  eventID,
+				"changed":   true,
 			}
 			if oldValue == "" {
 				result["old_value"] = nil

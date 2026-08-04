@@ -7,12 +7,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var molSquashCmd = &cobra.Command{
@@ -243,7 +243,7 @@ func squashMolecule(ctx context.Context, s storage.Storage, root *types.Issue, c
 		CloseReason: fmt.Sprintf("Squashed from %d wisps", len(children)),
 		Priority:    root.Priority,
 		IssueType:   types.TypeTask,
-		Ephemeral:        false, // Digest is permanent, not a wisp
+		Ephemeral:   false, // Digest is permanent, not a wisp
 		ClosedAt:    &now,
 	}
 

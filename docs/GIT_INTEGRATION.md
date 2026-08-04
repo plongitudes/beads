@@ -291,7 +291,7 @@ See [PROTECTED_BRANCHES.md](PROTECTED_BRANCHES.md) for complete setup guide, tro
 
 ```bash
 # One-time setup in each beads workspace
-./examples/git-hooks/install.sh
+bd hooks install
 ```
 
 ### What Gets Installed
@@ -326,7 +326,7 @@ See [PROTECTED_BRANCHES.md](PROTECTED_BRANCHES.md) for complete setup guide, tro
 - All workspaces stay synchronized
 - No manual `bd sync` needed
 
-See [examples/git-hooks/README.md](../examples/git-hooks/README.md) for details.
+Install with `bd hooks install`.
 
 ### Implementation Details
 
@@ -616,7 +616,7 @@ git pull
 bd import -i .beads/issues.jsonl
 
 # Check git hooks installed (prevent future issues)
-./examples/git-hooks/install.sh
+bd hooks install
 ```
 
 ## See Also
@@ -625,4 +625,3 @@ bd import -i .beads/issues.jsonl
 - [DAEMON.md](DAEMON.md) - Daemon management and configuration
 - [PROTECTED_BRANCHES.md](PROTECTED_BRANCHES.md) - Protected branch workflows
 - [MULTI_REPO_MIGRATION.md](MULTI_REPO_MIGRATION.md) - Multi-repo patterns
-- [examples/git-hooks/README.md](../examples/git-hooks/README.md) - Git hooks integration

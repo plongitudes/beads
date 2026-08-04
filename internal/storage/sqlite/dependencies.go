@@ -140,24 +140,24 @@ func (s *SQLiteStorage) AddDependency(ctx context.Context, dep *types.Dependency
 			}
 		}
 
-	// Insert dependency (including metadata and thread_id for edge consolidation - Decision 004)
-	_, err = tx.ExecContext(ctx, `
+		// Insert dependency (including metadata and thread_id for edge consolidation - Decision 004)
+		_, err = tx.ExecContext(ctx, `
 		INSERT INTO dependencies (issue_id, depends_on_id, type, created_at, created_by, metadata, thread_id)
 		VALUES (?, ?, ?, ?, ?, ?, ?)
 	`, dep.IssueID, dep.DependsOnID, dep.Type, dep.CreatedAt, dep.CreatedBy, dep.Metadata, dep.ThreadID)
-	if err != nil {
-		return fmt.Errorf("failed to add dependency: %w", err)
-	}
+		if err != nil {
+			return fmt.Errorf("failed to add dependency: %w", err)
+		}
 
-	// Record event
-	_, err = tx.ExecContext(ctx, `
+		// Record event
+		_, err = tx.ExecContext(ctx, `
 		INSERT INTO events (issue_id, event_type, actor, comment)
 		VALUES (?, ?, ?, ?)
 	`, dep.IssueID, types.EventDependencyAdded, actor,
-		fmt.Sprintf("Added dependency: %s %s %s", dep.IssueID, dep.Type, dep.DependsOnID))
-	if err != nil {
-		return fmt.Errorf("failed to record event: %w", err)
-	}
+			fmt.Sprintf("Added dependency: %s %s %s", dep.IssueID, dep.Type, dep.DependsOnID))
+		if err != nil {
+			return fmt.Errorf("failed to record event: %w", err)
+		}
 
 		// Mark issues as dirty for incremental export
 		// For external refs, only mark the source issue (target doesn't exist locally)

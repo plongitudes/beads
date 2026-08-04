@@ -13,13 +13,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/syncbranch"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var renamePrefixCmd = &cobra.Command{
@@ -188,7 +188,7 @@ NOTE: This is a rare operation. Most users never need this command.`,
 		}
 
 		if dryRun {
-				fmt.Printf("DRY RUN: Would rename %d issues from prefix '%s' to '%s'\n\n", len(issues), oldPrefix, newPrefix)
+			fmt.Printf("DRY RUN: Would rename %d issues from prefix '%s' to '%s'\n\n", len(issues), oldPrefix, newPrefix)
 			fmt.Printf("Sample changes:\n")
 			for i, issue := range issues {
 				if i >= 5 {
@@ -201,7 +201,6 @@ NOTE: This is a rare operation. Most users never need this command.`,
 			}
 			return
 		}
-
 
 		fmt.Printf("Renaming %d issues from prefix '%s' to '%s'...\n", len(issues), oldPrefix, newPrefix)
 

@@ -7,8 +7,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/types"
+	"github.com/spf13/cobra"
 )
 
 var infoCmd = &cobra.Command{

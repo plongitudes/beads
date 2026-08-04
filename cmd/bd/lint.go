@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/validation"
+	"github.com/spf13/cobra"
 )
 
 // LintResult holds the validation result for a single issue.

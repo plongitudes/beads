@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 
 	"github.com/gofrs/flock"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/config"
 	"github.com/plongitudes/beads/internal/debug"
 	"github.com/plongitudes/beads/internal/syncbranch"
+	"github.com/spf13/cobra"
 )
 
 var syncCmd = &cobra.Command{

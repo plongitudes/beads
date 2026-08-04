@@ -41,21 +41,21 @@ import (
 
 // Issue represents a beads issue with all possible fields
 type Issue struct {
-	ID           string       `json:"id"`
-	Title        string       `json:"title,omitempty"`
-	Description  string       `json:"description,omitempty"`
-	Notes        string       `json:"notes,omitempty"`
-	Status       string       `json:"status,omitempty"`
-	Priority     int          `json:"priority"` // No omitempty: 0 is valid (P0/critical)
-	IssueType    string       `json:"issue_type,omitempty"`
+	ID              string       `json:"id"`
+	Title           string       `json:"title,omitempty"`
+	Description     string       `json:"description,omitempty"`
+	Notes           string       `json:"notes,omitempty"`
+	Status          string       `json:"status,omitempty"`
+	Priority        int          `json:"priority"` // No omitempty: 0 is valid (P0/critical)
+	IssueType       string       `json:"issue_type,omitempty"`
 	CreatedAt       string       `json:"created_at,omitempty"`
 	UpdatedAt       string       `json:"updated_at,omitempty"`
 	ClosedAt        string       `json:"closed_at,omitempty"`
-	CloseReason     string       `json:"close_reason,omitempty"`     // Reason provided when closing (GH#891)
+	CloseReason     string       `json:"close_reason,omitempty"`      // Reason provided when closing (GH#891)
 	ClosedBySession string       `json:"closed_by_session,omitempty"` // Session that closed this issue (GH#891)
 	CreatedBy       string       `json:"created_by,omitempty"`
-	Dependencies []Dependency `json:"dependencies,omitempty"`
-	RawLine      string       `json:"-"` // Store original line for conflict output
+	Dependencies    []Dependency `json:"dependencies,omitempty"`
+	RawLine         string       `json:"-"` // Store original line for conflict output
 	// Tombstone fields: inline soft-delete support for merge
 	DeletedAt    string `json:"deleted_at,omitempty"`    // When the issue was deleted
 	DeletedBy    string `json:"deleted_by,omitempty"`    // Who deleted the issue
@@ -922,4 +922,3 @@ func mergeDependencies(base, left, right []Dependency) []Dependency {
 
 	return result
 }
-

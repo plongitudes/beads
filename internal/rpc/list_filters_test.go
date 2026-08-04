@@ -180,7 +180,7 @@ func TestListFiltersParity(t *testing.T) {
 		if err != nil {
 			t.Fatalf("Failed to create fixture %d: %v", i, err)
 		}
-		
+
 		var createdIssue types.Issue
 		if err := json.Unmarshal(resp.Data, &createdIssue); err != nil {
 			t.Fatalf("Failed to unmarshal created issue: %v", err)
@@ -526,7 +526,7 @@ func TestListFiltersDateParsing(t *testing.T) {
 	}
 
 	invalidFormats := []string{
-		"2025-13-01",    // Invalid month
+		"2025-13-01", // Invalid month
 		"not-a-date",
 		"",
 	}
@@ -633,7 +633,7 @@ func TestListFiltersBackwardCompat(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to create issue: %v", err)
 	}
-	
+
 	var createdIssue types.Issue
 	if err := json.Unmarshal(resp.Data, &createdIssue); err != nil {
 		t.Fatalf("Failed to unmarshal created issue: %v", err)

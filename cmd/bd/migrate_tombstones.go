@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 // legacyDeletionRecordCmd represents a single deletion entry from the legacy deletions.jsonl manifest.
@@ -70,8 +70,8 @@ func loadLegacyDeletionsCmd(path string) (map[string]legacyDeletionRecordCmd, []
 }
 
 var migrateTombstonesCmd = &cobra.Command{
-	Use:     "tombstones",
-	Short:   "Convert deletions.jsonl entries to inline tombstones",
+	Use:   "tombstones",
+	Short: "Convert deletions.jsonl entries to inline tombstones",
 	Long: `Migrate legacy deletions.jsonl entries to inline tombstones in issues.jsonl.
 
 This command converts existing deletion records from the legacy deletions.jsonl

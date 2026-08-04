@@ -14,7 +14,7 @@ import (
 func startRPCServer(ctx context.Context, socketPath string, store storage.Storage, workspacePath string, dbPath string, log daemonLogger) (*rpc.Server, chan error, error) {
 	// Sync daemon version with CLI version
 	rpc.ServerVersion = Version
-	
+
 	server := rpc.NewServer(socketPath, store, workspacePath, dbPath)
 	serverErrChan := make(chan error, 1)
 
@@ -47,13 +47,13 @@ func checkParentProcessAlive(parentPID int) bool {
 		// Parent PID not tracked (older lock files)
 		return true
 	}
-	
+
 	if parentPID == 1 {
 		// Adopted by init/launchd - this is normal for detached daemons on macOS/Linux
 		// Don't treat this as parent death
 		return true
 	}
-	
+
 	// Check if parent process is running
 	return isProcessRunning(parentPID)
 }

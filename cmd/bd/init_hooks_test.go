@@ -111,29 +111,36 @@ func TestInstallGitHooks_NoExistingHooks(t *testing.T) {
 		}
 		hooksDir := filepath.Join(gitDirPath, "hooks")
 
-		// Note: Can't fully test interactive prompt in automated tests
-		// This test verifies the logic works when no existing hooks present
-		// For full testing, we'd need to mock user input
+		// No existing hooks, so installGitHooks runs without prompting and
+		// installs the same shims as `bd hooks install`.
+		if err := installGitHooks(); err != nil {
+			t.Fatalf("installGitHooks() failed: %v", err)
+		}
 
-		// Check hooks were created
-		preCommitPath := filepath.Join(hooksDir, "pre-commit")
-		postMergePath := filepath.Join(hooksDir, "post-merge")
-
-		if _, err := os.Stat(preCommitPath); err == nil {
-			content, _ := os.ReadFile(preCommitPath)
-			if !strings.Contains(string(content), "bd (beads)") {
-				t.Error("pre-commit hook doesn't contain bd marker")
+		for _, name := range []string{"pre-commit", "post-merge", "pre-push", "post-checkout"} {
+			hookPath := filepath.Join(hooksDir, name)
+			info, err := os.Stat(hookPath)
+			if err != nil {
+				t.Errorf("%s hook not installed: %v", name, err)
+				continue
 			}
-			if strings.Contains(string(content), "chained") {
-				t.Error("pre-commit hook shouldn't be chained when no existing hooks")
+			if info.Mode().Perm()&0111 == 0 {
+				t.Errorf("%s hook is not executable", name)
+			}
+			content, err := os.ReadFile(hookPath)
+			if err != nil {
+				t.Errorf("could not read %s hook: %v", name, err)
+				continue
+			}
+			if !strings.Contains(string(content), "# bd-shim") {
+				t.Errorf("%s hook is not a bd shim", name)
 			}
 		}
 
-		if _, err := os.Stat(postMergePath); err == nil {
-			content, _ := os.ReadFile(postMergePath)
-			if !strings.Contains(string(content), "bd (beads)") {
-				t.Error("post-merge hook doesn't contain bd marker")
-			}
+		// prepare-commit-msg was removed (agent-identity feature) and must
+		// not be installed.
+		if _, err := os.Stat(filepath.Join(hooksDir, "prepare-commit-msg")); err == nil {
+			t.Error("prepare-commit-msg hook should not be installed")
 		}
 	})
 }

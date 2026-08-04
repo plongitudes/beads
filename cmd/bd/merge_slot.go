@@ -6,12 +6,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/config"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 // mergeSlotCmd is the parent command for merge-slot operations
@@ -165,7 +165,7 @@ func runMergeSlotCreate(cmd *cobra.Command, args []string) error {
 			Description: description,
 			IssueType:   string(types.TypeTask), // Use task type; gt:slot label marks it as slot
 			Priority:    0,                      // P0 - system infrastructure
-			Labels:      []string{"gt:slot"},   // Gas Town slot label
+			Labels:      []string{"gt:slot"},    // Gas Town slot label
 		}
 		resp, err := daemonClient.Create(createArgs)
 		if err != nil {

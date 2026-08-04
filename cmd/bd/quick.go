@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/validation"
+	"github.com/spf13/cobra"
 )
 
 var quickCmd = &cobra.Command{

@@ -11,12 +11,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/cmd/bd/doctor"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/daemon"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
+	"github.com/spf13/cobra"
 )
 
 var daemonCmd = &cobra.Command{
@@ -600,6 +600,7 @@ func runDaemonLoop(interval time.Duration, autoCommit, autoPush, autoPull, local
 //   - If either BEADS_AUTO_COMMIT/daemon.auto_commit or BEADS_AUTO_PUSH/daemon.auto_push
 //     is enabled, treat as auto-sync=true (full read/write)
 //   - Otherwise check auto-pull for read-only mode
+//
 // 4. Fallback: all default to true when sync-branch configured
 //
 // Note: The individual auto-commit/auto-push settings are deprecated.

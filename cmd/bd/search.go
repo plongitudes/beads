@@ -7,11 +7,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/util"
 	"github.com/plongitudes/beads/internal/validation"
+	"github.com/spf13/cobra"
 )
 
 var searchCmd = &cobra.Command{

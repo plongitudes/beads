@@ -9,11 +9,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/debug"
 	"github.com/plongitudes/beads/internal/linear"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/types"
+	"github.com/spf13/cobra"
 )
 
 // linearCmd is the root command for Linear integration.
@@ -643,4 +643,3 @@ func getLinearHashLength(ctx context.Context) int {
 	}
 	return value
 }
-

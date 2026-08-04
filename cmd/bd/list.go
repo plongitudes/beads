@@ -16,7 +16,6 @@ import (
 	"time"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/config"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/storage"
@@ -26,6 +25,7 @@ import (
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/util"
 	"github.com/plongitudes/beads/internal/validation"
+	"github.com/spf13/cobra"
 )
 
 // parseTimeFlag parses time strings using the layered time parsing architecture.

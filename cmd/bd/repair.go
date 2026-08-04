@@ -11,8 +11,8 @@ import (
 
 	_ "github.com/ncruces/go-sqlite3/driver"
 	_ "github.com/ncruces/go-sqlite3/embed"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 var repairCmd = &cobra.Command{
@@ -649,4 +649,3 @@ func findOrphanedEvents(db *sql.DB) ([]orphanedEvent, error) {
 	}
 	return events, rows.Err()
 }
-

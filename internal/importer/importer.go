@@ -32,13 +32,13 @@ const (
 
 // Options contains import configuration
 type Options struct {
-	DryRun                     bool            // Preview changes without applying them
-	SkipUpdate                 bool            // Skip updating existing issues (create-only mode)
-	Strict                     bool            // Fail on any error (dependencies, labels, etc.)
-	RenameOnImport             bool            // Rename imported issues to match database prefix
-	SkipPrefixValidation       bool            // Skip prefix validation (for auto-import)
-	OrphanHandling             OrphanHandling  // How to handle missing parent issues (default: allow)
-	ClearDuplicateExternalRefs bool            // Clear duplicate external_ref values instead of erroring
+	DryRun                     bool                 // Preview changes without applying them
+	SkipUpdate                 bool                 // Skip updating existing issues (create-only mode)
+	Strict                     bool                 // Fail on any error (dependencies, labels, etc.)
+	RenameOnImport             bool                 // Rename imported issues to match database prefix
+	SkipPrefixValidation       bool                 // Skip prefix validation (for auto-import)
+	OrphanHandling             OrphanHandling       // How to handle missing parent issues (default: allow)
+	ClearDuplicateExternalRefs bool                 // Clear duplicate external_ref values instead of erroring
 	ProtectLocalExportIDs      map[string]time.Time // IDs from left snapshot with timestamps for timestamp-aware protection (GH#865)
 }
 

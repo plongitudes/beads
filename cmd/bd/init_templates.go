@@ -163,7 +163,7 @@ Try Beads in your own projects:
 
 ` + "```bash" + `
 # Install Beads
-curl -sSL https://raw.githubusercontent.com/plongitudes/beads/main/scripts/install.sh | bash
+go install github.com/plongitudes/beads/cmd/bd@latest
 
 # Initialize in your repo
 bd init

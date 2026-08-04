@@ -97,13 +97,13 @@ func checkPIDFile(beadsDir string) (running bool, pid int) {
 // Returns lock info if available, or error if file doesn't exist or can't be parsed
 func ReadLockInfo(beadsDir string) (*LockInfo, error) {
 	lockPath := filepath.Join(beadsDir, "daemon.lock")
-	
+
 	// #nosec G304 - controlled path from config
 	data, err := os.ReadFile(lockPath)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	var lockInfo LockInfo
 	if err := json.Unmarshal(data, &lockInfo); err != nil {
 		// Try parsing as old format (plain PID)
@@ -113,6 +113,6 @@ func ReadLockInfo(beadsDir string) (*LockInfo, error) {
 		}
 		return nil, fmt.Errorf("cannot parse lock file: %w", err)
 	}
-	
+
 	return &lockInfo, nil
 }

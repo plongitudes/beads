@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/storage/memory"
 	"github.com/plongitudes/beads/internal/types"
+	"github.com/spf13/cobra"
 )
 
 func TestIssueIDCompletion(t *testing.T) {

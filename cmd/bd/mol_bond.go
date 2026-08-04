@@ -6,12 +6,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/formula"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var molBondCmd = &cobra.Command{
@@ -426,9 +426,9 @@ func bondProtoMolWithSubgraph(ctx context.Context, s storage.Storage, protoSubgr
 
 	// Build CloneOptions for spawning
 	opts := CloneOptions{
-		Vars:  vars,
-		Actor: actorName,
-		Ephemeral:  makeEphemeral,
+		Vars:      vars,
+		Actor:     actorName,
+		Ephemeral: makeEphemeral,
 	}
 
 	// Dynamic bonding: use custom IDs if childRef is provided

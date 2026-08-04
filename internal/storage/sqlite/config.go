@@ -54,10 +54,10 @@ func (s *SQLiteStorage) DeleteConfig(ctx context.Context, key string) error {
 type OrphanHandling string
 
 const (
-	OrphanStrict    OrphanHandling = "strict"     // Reject imports with orphans
-	OrphanResurrect OrphanHandling = "resurrect"  // Auto-resurrect parents from JSONL
-	OrphanSkip      OrphanHandling = "skip"       // Skip orphans silently
-	OrphanAllow     OrphanHandling = "allow"      // Allow orphans (default)
+	OrphanStrict    OrphanHandling = "strict"    // Reject imports with orphans
+	OrphanResurrect OrphanHandling = "resurrect" // Auto-resurrect parents from JSONL
+	OrphanSkip      OrphanHandling = "skip"      // Skip orphans silently
+	OrphanAllow     OrphanHandling = "allow"     // Allow orphans (default)
 )
 
 // GetOrphanHandling gets the import.orphan_handling config value

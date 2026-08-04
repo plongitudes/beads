@@ -10,9 +10,9 @@ import (
 	"strings"
 
 	"github.com/BurntSushi/toml"
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/formula"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 // formulaCmd is the parent command for formula operations.

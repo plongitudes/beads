@@ -49,7 +49,7 @@ func TestInitCommand(t *testing.T) {
 			origDBPath := dbPath
 			defer func() { dbPath = origDBPath }()
 			dbPath = ""
-			
+
 			// Reset Cobra command state
 			rootCmd.SetArgs([]string{})
 			initCmd.Flags().Set("prefix", "")
@@ -141,19 +141,19 @@ func TestInitCommand(t *testing.T) {
 			// Verify database was created (always beads.db now)
 			dbPath := filepath.Join(beadsDir, "beads.db")
 			if _, err := os.Stat(dbPath); os.IsNotExist(err) {
-			t.Errorf("Database file was not created at %s", dbPath)
+				t.Errorf("Database file was not created at %s", dbPath)
 			}
 
 			// Verify database has correct prefix
 			// Note: This database was already created by init command, just open it
-		store, err := openExistingTestDB(t, dbPath)
+			store, err := openExistingTestDB(t, dbPath)
 			if err != nil {
-			 t.Fatalf("Failed to open database: %v", err)
-		}
-		defer store.Close()
+				t.Fatalf("Failed to open database: %v", err)
+			}
+			defer store.Close()
 
-		ctx := context.Background()
-		prefix, err := store.GetConfig(ctx, "issue_prefix")
+			ctx := context.Background()
+			prefix, err := store.GetConfig(ctx, "issue_prefix")
 			if err != nil {
 				t.Fatalf("Failed to get issue prefix from database: %v", err)
 			}
@@ -436,14 +436,14 @@ func TestInitWithCustomDBPath(t *testing.T) {
 		}
 	})
 
-	// Test with multiple BEADS_DB variations  
+	// Test with multiple BEADS_DB variations
 	t.Run("BEADS_DB with subdirectories", func(t *testing.T) {
 		dbPath = "" // Reset global
 		envPath := filepath.Join(tmpDir, "env", "subdirs", "test.db")
-		
+
 		os.Setenv("BEADS_DB", envPath)
 		defer os.Unsetenv("BEADS_DB")
-		
+
 		rootCmd.SetArgs([]string{"init", "--prefix", "envtest2", "--quiet"})
 
 		if err := rootCmd.Execute(); err != nil {
@@ -454,7 +454,7 @@ func TestInitWithCustomDBPath(t *testing.T) {
 		if _, err := os.Stat(envPath); os.IsNotExist(err) {
 			t.Errorf("Database was not created at BEADS_DB path %s", envPath)
 		}
-		
+
 		// Verify .beads/ directory was NOT created in work directory
 		if _, err := os.Stat(filepath.Join(workDir, ".beads")); err == nil {
 			t.Error(".beads/ directory should not be created in CWD when BEADS_DB is set")
@@ -1188,8 +1188,8 @@ func TestInitBranchPersistsToConfigYaml(t *testing.T) {
 	// The bug: sync-branch remains commented as "# sync-branch:" instead of "sync-branch:"
 	// This test should FAIL on the current codebase to prove the bug exists
 	if strings.Contains(configStr, "# sync-branch:") && !strings.Contains(configStr, "\nsync-branch:") {
-		t.Errorf("BUG: --branch flag did not persist to config.yaml\n"+
-			"Expected uncommented 'sync-branch: \"beads-sync\"'\n"+
+		t.Errorf("BUG: --branch flag did not persist to config.yaml\n" +
+			"Expected uncommented 'sync-branch: \"beads-sync\"'\n" +
 			"Got commented '# sync-branch:' (only set in database, not config.yaml)")
 	}
 

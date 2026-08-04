@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 	"time"
-	
+
 	"github.com/plongitudes/beads/internal/config"
 )
 
@@ -14,7 +14,7 @@ func TestDaemonAutoStart(t *testing.T) {
 	if err := config.Initialize(); err != nil {
 		t.Fatalf("Failed to initialize config: %v", err)
 	}
-	
+
 	// Save original env
 	origAutoStart := os.Getenv("BEADS_AUTO_START_DAEMON")
 	origNoDaemon := os.Getenv("BEADS_NO_DAEMON")

@@ -5,9 +5,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/spf13/cobra"
 )
 
 var daemonStartCmd = &cobra.Command{

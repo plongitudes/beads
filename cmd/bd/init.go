@@ -9,7 +9,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/cmd/bd/doctor"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/config"
@@ -20,6 +19,7 @@ import (
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 var initCmd = &cobra.Command{
@@ -611,7 +611,6 @@ func migrateOldDatabases(targetPath string, quiet bool) error {
 	return nil
 }
 
-
 // readFirstIssueFromJSONL reads the first issue from a JSONL file
 func readFirstIssueFromJSONL(path string) (*types.Issue, error) {
 	// #nosec G304 -- helper reads JSONL file chosen by current bd command
@@ -678,7 +677,6 @@ func readFirstIssueFromGit(jsonlPath, gitRef string) (*types.Issue, error) {
 
 	return nil, nil
 }
-
 
 // checkExistingBeadsData checks for existing database files
 // and returns an error if found (safety guard for bd-emg)

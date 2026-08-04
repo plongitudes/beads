@@ -7,9 +7,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/cmd/bd/setup"
 	"github.com/plongitudes/beads/internal/recipes"
+	"github.com/spf13/cobra"
 )
 
 var (

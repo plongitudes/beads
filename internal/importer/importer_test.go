@@ -151,10 +151,10 @@ func TestFieldComparator_StringConversion(t *testing.T) {
 	fc := newFieldComparator()
 
 	tests := []struct {
-		name      string
-		value     interface{}
-		wantStr   string
-		wantOk    bool
+		name    string
+		value   interface{}
+		wantStr string
+		wantOk  bool
 	}{
 		{"string", "hello", "hello", true},
 		{"string pointer", stringPtr("world"), "world", true},
@@ -434,67 +434,67 @@ func TestRenameImportedIssuePrefixes(t *testing.T) {
 
 func TestReplaceBoundaryAware(t *testing.T) {
 	tests := []struct {
-		name   string
-		text   string
-		oldID  string
-		newID  string
-		want   string
+		name  string
+		text  string
+		oldID string
+		newID string
+		want  string
 	}{
 		{
-			name:   "simple replacement",
-			text:   "See old-1 for details",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "See new-1 for details",
+			name:  "simple replacement",
+			text:  "See old-1 for details",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "See new-1 for details",
 		},
 		{
-			name:   "multiple occurrences",
-			text:   "old-1 and old-1 again",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "new-1 and new-1 again",
+			name:  "multiple occurrences",
+			text:  "old-1 and old-1 again",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "new-1 and new-1 again",
 		},
 		{
-			name:   "no match substring prefix",
-			text:   "old-10 should not match",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "old-10 should not match",
+			name:  "no match substring prefix",
+			text:  "old-10 should not match",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "old-10 should not match",
 		},
 		{
-			name:   "match at end of longer ID",
-			text:   "should not match old-1 at end",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "should not match new-1 at end",
+			name:  "match at end of longer ID",
+			text:  "should not match old-1 at end",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "should not match new-1 at end",
 		},
 		{
-			name:   "boundary at start",
-			text:   "old-1 starts here",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "new-1 starts here",
+			name:  "boundary at start",
+			text:  "old-1 starts here",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "new-1 starts here",
 		},
 		{
-			name:   "boundary at end",
-			text:   "ends with old-1",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "ends with new-1",
+			name:  "boundary at end",
+			text:  "ends with old-1",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "ends with new-1",
 		},
 		{
-			name:   "boundary punctuation",
-			text:   "See (old-1) and [old-1] or {old-1}",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "See (new-1) and [new-1] or {new-1}",
+			name:  "boundary punctuation",
+			text:  "See (old-1) and [old-1] or {old-1}",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "See (new-1) and [new-1] or {new-1}",
 		},
 		{
-			name:   "no occurrence",
-			text:   "No match here",
-			oldID:  "old-1",
-			newID:  "new-1",
-			want:   "No match here",
+			name:  "no occurrence",
+			text:  "No match here",
+			oldID: "old-1",
+			newID: "new-1",
+			want:  "No match here",
 		},
 	}
 
@@ -545,9 +545,9 @@ func TestIsValidIDSuffix(t *testing.T) {
 		{"abc.1.2.3", true},
 		{"1.5", true},
 		// Invalid suffixes
-		{"", false},       // Empty string
-		{"A3F8", false},   // Uppercase not allowed
-		{"@#$!", false},   // Special characters not allowed
+		{"", false},        // Empty string
+		{"A3F8", false},    // Uppercase not allowed
+		{"@#$!", false},    // Special characters not allowed
 		{"abc-def", false}, // Hyphens not allowed in suffix
 	}
 
@@ -567,7 +567,7 @@ func stringPtr(s string) *string {
 
 func TestImportIssues_Basic(t *testing.T) {
 	ctx := context.Background()
-	
+
 	// Create temp database
 	tmpDB := t.TempDir() + "/test.db"
 	store, err := sqlite.New(context.Background(), tmpDB)
@@ -575,12 +575,12 @@ func TestImportIssues_Basic(t *testing.T) {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	defer store.Close()
-	
+
 	// Set config prefix
 	if err := store.SetConfig(ctx, "issue_prefix", "test"); err != nil {
 		t.Fatalf("Failed to set prefix: %v", err)
 	}
-	
+
 	// Import single issue
 	issues := []*types.Issue{
 		{
@@ -592,16 +592,16 @@ func TestImportIssues_Basic(t *testing.T) {
 			IssueType:   types.TypeTask,
 		},
 	}
-	
+
 	result, err := ImportIssues(ctx, tmpDB, store, issues, Options{})
 	if err != nil {
 		t.Fatalf("Import failed: %v", err)
 	}
-	
+
 	if result.Created != 1 {
 		t.Errorf("Expected 1 created, got %d", result.Created)
 	}
-	
+
 	// Verify issue was created
 	retrieved, err := store.GetIssue(ctx, "test-abc123")
 	if err != nil {
@@ -614,18 +614,18 @@ func TestImportIssues_Basic(t *testing.T) {
 
 func TestImportIssues_Update(t *testing.T) {
 	ctx := context.Background()
-	
+
 	tmpDB := t.TempDir() + "/test.db"
 	store, err := sqlite.New(context.Background(), tmpDB)
 	if err != nil {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	defer store.Close()
-	
+
 	if err := store.SetConfig(ctx, "issue_prefix", "test"); err != nil {
 		t.Fatalf("Failed to set prefix: %v", err)
 	}
-	
+
 	// Create initial issue
 	issue1 := &types.Issue{
 		ID:          "test-abc123",
@@ -636,12 +636,12 @@ func TestImportIssues_Update(t *testing.T) {
 		IssueType:   types.TypeTask,
 	}
 	issue1.ContentHash = issue1.ComputeContentHash()
-	
+
 	err = store.CreateIssue(ctx, issue1, "test")
 	if err != nil {
 		t.Fatalf("Failed to create initial issue: %v", err)
 	}
-	
+
 	// Import updated version with newer timestamp
 	issue2 := &types.Issue{
 		ID:          "test-abc123",
@@ -654,18 +654,18 @@ func TestImportIssues_Update(t *testing.T) {
 		UpdatedAt:   time.Now().Add(time.Hour), // Newer than issue1
 	}
 	issue2.ContentHash = issue2.ComputeContentHash()
-	
+
 	result, err := ImportIssues(ctx, tmpDB, store, []*types.Issue{issue2}, Options{})
 	if err != nil {
 		t.Fatalf("Import failed: %v", err)
 	}
-	
+
 	// The importer detects this as both a collision (1) and then upserts it (creates=1)
 	// Total updates = collision count + actual upserts
 	if result.Updated == 0 && result.Created == 0 {
 		t.Error("Expected some updates or creates")
 	}
-	
+
 	// Verify update
 	retrieved, err := store.GetIssue(ctx, "test-abc123")
 	if err != nil {
@@ -678,18 +678,18 @@ func TestImportIssues_Update(t *testing.T) {
 
 func TestImportIssues_DryRun(t *testing.T) {
 	ctx := context.Background()
-	
+
 	tmpDB := t.TempDir() + "/test.db"
 	store, err := sqlite.New(context.Background(), tmpDB)
 	if err != nil {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	defer store.Close()
-	
+
 	if err := store.SetConfig(ctx, "issue_prefix", "test"); err != nil {
 		t.Fatalf("Failed to set prefix: %v", err)
 	}
-	
+
 	issues := []*types.Issue{
 		{
 			ID:        "test-abc123",
@@ -699,13 +699,13 @@ func TestImportIssues_DryRun(t *testing.T) {
 			IssueType: types.TypeTask,
 		},
 	}
-	
+
 	// Dry run returns early when no collisions, so it reports what would be created
 	result, err := ImportIssues(ctx, tmpDB, store, issues, Options{DryRun: true})
 	if err != nil {
 		t.Fatalf("Import failed: %v", err)
 	}
-	
+
 	// Should report that 1 issue would be created
 	if result.Created != 1 {
 		t.Errorf("Expected 1 would be created in dry run, got %d", result.Created)
@@ -714,18 +714,18 @@ func TestImportIssues_DryRun(t *testing.T) {
 
 func TestImportIssues_Dependencies(t *testing.T) {
 	ctx := context.Background()
-	
+
 	tmpDB := t.TempDir() + "/test.db"
 	store, err := sqlite.New(context.Background(), tmpDB)
 	if err != nil {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	defer store.Close()
-	
+
 	if err := store.SetConfig(ctx, "issue_prefix", "test"); err != nil {
 		t.Fatalf("Failed to set prefix: %v", err)
 	}
-	
+
 	issues := []*types.Issue{
 		{
 			ID:        "test-abc123",
@@ -745,16 +745,16 @@ func TestImportIssues_Dependencies(t *testing.T) {
 			IssueType: types.TypeTask,
 		},
 	}
-	
+
 	result, err := ImportIssues(ctx, tmpDB, store, issues, Options{})
 	if err != nil {
 		t.Fatalf("Import failed: %v", err)
 	}
-	
+
 	if result.Created != 2 {
 		t.Errorf("Expected 2 created, got %d", result.Created)
 	}
-	
+
 	// Verify dependency was created
 	deps, err := store.GetDependencies(ctx, "test-abc123")
 	if err != nil {
@@ -767,18 +767,18 @@ func TestImportIssues_Dependencies(t *testing.T) {
 
 func TestImportIssues_Labels(t *testing.T) {
 	ctx := context.Background()
-	
+
 	tmpDB := t.TempDir() + "/test.db"
 	store, err := sqlite.New(context.Background(), tmpDB)
 	if err != nil {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	defer store.Close()
-	
+
 	if err := store.SetConfig(ctx, "issue_prefix", "test"); err != nil {
 		t.Fatalf("Failed to set prefix: %v", err)
 	}
-	
+
 	issues := []*types.Issue{
 		{
 			ID:        "test-abc123",
@@ -789,16 +789,16 @@ func TestImportIssues_Labels(t *testing.T) {
 			Labels:    []string{"bug", "critical"},
 		},
 	}
-	
+
 	result, err := ImportIssues(ctx, tmpDB, store, issues, Options{})
 	if err != nil {
 		t.Fatalf("Import failed: %v", err)
 	}
-	
+
 	if result.Created != 1 {
 		t.Errorf("Expected 1 created, got %d", result.Created)
 	}
-	
+
 	// Verify labels were created
 	retrieved, err := store.GetIssue(ctx, "test-abc123")
 	if err != nil {
@@ -811,14 +811,14 @@ func TestImportIssues_Labels(t *testing.T) {
 
 func TestGetOrCreateStore_ExistingStore(t *testing.T) {
 	ctx := context.Background()
-	
+
 	tmpDB := t.TempDir() + "/test.db"
 	store, err := sqlite.New(context.Background(), tmpDB)
 	if err != nil {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	defer store.Close()
-	
+
 	result, needClose, err := getOrCreateStore(ctx, tmpDB, store)
 	if err != nil {
 		t.Fatalf("Expected no error, got: %v", err)
@@ -833,23 +833,23 @@ func TestGetOrCreateStore_ExistingStore(t *testing.T) {
 
 func TestGetOrCreateStore_NewStore(t *testing.T) {
 	ctx := context.Background()
-	
+
 	tmpDB := t.TempDir() + "/test.db"
-	
+
 	// Create initial database
 	initStore, err := sqlite.New(context.Background(), tmpDB)
 	if err != nil {
 		t.Fatalf("Failed to create store: %v", err)
 	}
 	initStore.Close()
-	
+
 	// Test creating new connection
 	result, needClose, err := getOrCreateStore(ctx, tmpDB, nil)
 	if err != nil {
 		t.Fatalf("Expected no error, got: %v", err)
 	}
 	defer result.Close()
-	
+
 	if !needClose {
 		t.Error("Expected needClose=true for new store")
 	}
@@ -860,7 +860,7 @@ func TestGetOrCreateStore_NewStore(t *testing.T) {
 
 func TestGetOrCreateStore_EmptyPath(t *testing.T) {
 	ctx := context.Background()
-	
+
 	_, _, err := getOrCreateStore(ctx, "", nil)
 	if err == nil {
 		t.Error("Expected error for empty database path")
@@ -889,7 +889,7 @@ func TestGetPrefixList(t *testing.T) {
 			want:     []string{},
 		},
 	}
-	
+
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := GetPrefixList(tt.prefixes)
@@ -1008,7 +1008,7 @@ func TestValidateNoDuplicateExternalRefs(t *testing.T) {
 
 func TestConcurrentExternalRefImports(t *testing.T) {
 	t.Skip("TODO(bd-gpe7): Test hangs due to database deadlock - needs investigation")
-	
+
 	t.Run("sequential imports with same external_ref are detected as updates", func(t *testing.T) {
 		store, err := sqlite.New(context.Background(), ":memory:")
 		if err != nil {
@@ -1022,7 +1022,7 @@ func TestConcurrentExternalRefImports(t *testing.T) {
 		}
 
 		externalRef := "JIRA-100"
-		
+
 		issue1 := &types.Issue{
 			ID:          "bd-1",
 			Title:       "First import",
@@ -1180,7 +1180,7 @@ func TestImportOrphanSkip_CountMismatch(t *testing.T) {
 			UpdatedAt: now,
 		},
 		{
-			ID:        "test-orphan.1",                // Child of non-existent parent
+			ID:        "test-orphan.1", // Child of non-existent parent
 			Title:     "Orphaned Child",
 			Status:    types.StatusOpen,
 			Priority:  2,

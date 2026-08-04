@@ -17,8 +17,6 @@ import (
 )
 
 const (
-	hooksExamplesURL = "https://github.com/plongitudes/beads/tree/main/examples/git-hooks"
-	hooksUpgradeURL  = "https://github.com/plongitudes/beads/issues/615"
 )
 
 // bdShimMarker identifies bd shim hooks (GH#946)
@@ -104,7 +102,7 @@ func CheckGitHooks() DoctorCheck {
 						Status:  StatusWarning,
 						Message: fmt.Sprintf("%s hooks not calling bd", integration.Manager),
 						Detail:  fmt.Sprintf("Missing bd: %s", strings.Join(integration.HooksWithoutBd, ", ")),
-						Fix:     "Add or upgrade to 'bd hooks run <hook>'. See " + hooksUpgradeURL,
+						Fix:     "Add or upgrade to 'bd hooks run <hook>'.",
 					}
 				}
 
@@ -123,7 +121,7 @@ func CheckGitHooks() DoctorCheck {
 				Status:  StatusWarning,
 				Message: fmt.Sprintf("%s not calling bd", fix.ManagerNames(externalManagers)),
 				Detail:  "Configure hooks to call bd commands",
-				Fix:     "Add or upgrade to 'bd hooks run <hook>'. See " + hooksUpgradeURL,
+				Fix:     "Add or upgrade to 'bd hooks run <hook>'.",
 			}
 		}
 	}
@@ -137,7 +135,7 @@ func CheckGitHooks() DoctorCheck {
 		}
 	}
 
-	hookInstallMsg := "Install hooks with 'bd hooks install'. See " + hooksExamplesURL
+	hookInstallMsg := "Install hooks with 'bd hooks install'"
 
 	if len(installedHooks) > 0 {
 		return DoctorCheck{
@@ -445,7 +443,7 @@ func CheckSyncBranchHookCompatibility(path string) DoctorCheck {
 						Status:  StatusWarning,
 						Message: fmt.Sprintf("Managed by %s (missing pre-push bd integration)", integration.Manager),
 						Detail:  "pre-push hook needs 'bd hooks run pre-push' for sync-branch",
-						Fix:     fmt.Sprintf("Add or upgrade to 'bd hooks run pre-push' in %s. See %s", integration.Manager, hooksExamplesURL),
+						Fix:     fmt.Sprintf("Add or upgrade to 'bd hooks run pre-push' in %s", integration.Manager),
 					}
 				}
 			}
@@ -456,7 +454,7 @@ func CheckSyncBranchHookCompatibility(path string) DoctorCheck {
 				Status:  StatusWarning,
 				Message: fmt.Sprintf("Managed by %s (no bd integration detected)", names),
 				Detail:  fmt.Sprintf("Pre-push hook managed by %s but no 'bd hooks run' found", names),
-				Fix:     fmt.Sprintf("Add or upgrade to 'bd hooks run <hook>' in %s. See %s", names, hooksExamplesURL),
+				Fix:     fmt.Sprintf("Add or upgrade to 'bd hooks run <hook>' in %s", names),
 			}
 		}
 

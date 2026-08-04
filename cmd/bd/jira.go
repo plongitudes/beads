@@ -16,9 +16,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/types"
+	"github.com/spf13/cobra"
 )
 
 // JiraSyncStats tracks statistics for a Jira sync operation.

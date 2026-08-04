@@ -185,25 +185,25 @@ func runEventDrivenLoop(
 			return
 
 		case <-ctx.Done():
-		log.log("Context canceled, shutting down")
-		if watcher != nil {
-		_ = watcher.Close()
-		}
+			log.log("Context canceled, shutting down")
+			if watcher != nil {
+				_ = watcher.Close()
+			}
 			if err := server.Stop(); err != nil {
 				log.log("Error stopping server: %v", err)
 			}
 			return
 
 		case err := <-serverErrChan:
-		log.log("RPC server failed: %v", err)
-		cancel()
-		if watcher != nil {
-		_ = watcher.Close()
-		}
-		if stopErr := server.Stop(); stopErr != nil {
-			log.log("Error stopping server: %v", stopErr)
-		}
-		return
+			log.log("RPC server failed: %v", err)
+			cancel()
+			if watcher != nil {
+				_ = watcher.Close()
+			}
+			if stopErr := server.Stop(); stopErr != nil {
+				log.log("Error stopping server: %v", stopErr)
+			}
+			return
 		}
 	}
 }
@@ -275,7 +275,7 @@ func checkDaemonHealth(ctx context.Context, store storage.Storage, log daemonLog
 func getRemoteSyncInterval(log daemonLogger) time.Duration {
 	// config.GetDuration handles both config.yaml and env var (env takes precedence)
 	duration := config.GetDuration("remote-sync-interval")
-	
+
 	// If config returns 0, it could mean:
 	// 1. User explicitly set "0" to disable
 	// 2. Config not found (use default)

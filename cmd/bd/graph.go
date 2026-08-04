@@ -8,29 +8,29 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/storage"
 	"github.com/plongitudes/beads/internal/storage/sqlite"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/ui"
 	"github.com/plongitudes/beads/internal/utils"
+	"github.com/spf13/cobra"
 )
 
 // GraphNode represents a node in the rendered graph
 type GraphNode struct {
-	Issue    *types.Issue
-	Layer    int      // Horizontal layer (topological order)
-	Position int      // Vertical position within layer
+	Issue     *types.Issue
+	Layer     int      // Horizontal layer (topological order)
+	Position  int      // Vertical position within layer
 	DependsOn []string // IDs this node depends on (blocks dependencies only)
 }
 
 // GraphLayout holds the computed graph layout
 type GraphLayout struct {
-	Nodes      map[string]*GraphNode
-	Layers     [][]string // Layer index -> node IDs in that layer
-	MaxLayer   int
-	RootID     string
+	Nodes    map[string]*GraphNode
+	Layers   [][]string // Layer index -> node IDs in that layer
+	MaxLayer int
+	RootID   string
 }
 
 var (
@@ -157,9 +157,9 @@ Status icons: ○ open  ◐ in_progress  ● blocked  ✓ closed  ❄ deferred`,
 
 		if jsonOutput {
 			outputJSON(map[string]interface{}{
-				"root":    subgraph.Root,
-				"issues":  subgraph.Issues,
-				"layout":  layout,
+				"root":   subgraph.Root,
+				"issues": subgraph.Issues,
+				"layout": layout,
 			})
 			return
 		}

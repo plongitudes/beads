@@ -7,14 +7,14 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/rpc"
+	"github.com/spf13/cobra"
 )
 
 var (
 	// Version is the current version of bd (overridden by ldflags at build time)
-    Version = "0.47.1"
+	Version = "0.47.1"
 	// Build can be set via ldflags at compile time
 	Build = "dev"
 	// Commit and branch the git revision the binary was built from (optional ldflag)

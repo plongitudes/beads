@@ -7,9 +7,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/cmd/bd/doctor"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 var doctorFindOrphanedIssues = doctor.FindOrphanedIssues

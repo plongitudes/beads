@@ -1081,7 +1081,6 @@ func TestMetadataOperations(t *testing.T) {
 	}
 }
 
-
 func TestThreadSafety(t *testing.T) {
 	store := setupTestMemory(t)
 	defer store.Close()

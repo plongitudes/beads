@@ -8,10 +8,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/beads"
 	"github.com/plongitudes/beads/internal/git"
 	"github.com/plongitudes/beads/internal/ui"
+	"github.com/spf13/cobra"
 )
 
 // WorktreeInfo contains information about a git worktree
@@ -400,11 +400,11 @@ func runWorktreeInfo(cmd *cobra.Command, args []string) error {
 
 	if jsonOutput {
 		result := map[string]interface{}{
-			"is_worktree":     true,
-			"path":            cwd,
-			"name":            filepath.Base(cwd),
-			"branch":          branch,
-			"main_repo":       mainRepoRoot,
+			"is_worktree":      true,
+			"path":             cwd,
+			"name":             filepath.Base(cwd),
+			"branch":           branch,
+			"main_repo":        mainRepoRoot,
 			"beads_redirected": redirectInfo.IsRedirected,
 		}
 		if redirectInfo.IsRedirected {

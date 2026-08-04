@@ -100,7 +100,7 @@ golangci-lint run ./...
 
 - **Always read AGENTS.md first** - it has the complete workflow
 - Use `bd --no-daemon` in git worktrees (see AGENTS.md for why)
-- Install git hooks for zero-lag sync: `./examples/git-hooks/install.sh`
+- Install git hooks for zero-lag sync: `bd hooks install`
 - Run `bd sync` at end of agent sessions to force immediate flush/commit/push
 - Check for duplicates proactively: `bd duplicates --auto-merge`
 - Use `--json` flags for all programmatic use

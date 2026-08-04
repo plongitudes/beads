@@ -8,10 +8,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/spf13/cobra"
 	"github.com/plongitudes/beads/internal/rpc"
 	"github.com/plongitudes/beads/internal/types"
 	"github.com/plongitudes/beads/internal/util"
+	"github.com/spf13/cobra"
 )
 
 var countCmd = &cobra.Command{
