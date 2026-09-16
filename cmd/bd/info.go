@@ -297,6 +297,16 @@ type VersionChange struct {
 // versionChanges contains agent-actionable changes for recent versions
 var versionChanges = []VersionChange{
 	{
+		Version: "0.48.1",
+		Date:    "2026-09-16",
+		Changes: []string{
+			"CHANGE: GitHub Releases re-enabled - tag pushes publish prebuilt archives via goreleaser",
+			"CHANGE: scripts/install.sh downloads the release binary instead of falling through to go install",
+			"CHANGE: bd doctor update check now has releases to compare against",
+			"REMOVED: PyPI, npm, and Homebrew publish jobs from release workflow",
+		},
+	},
+	{
 		Version: "0.48.0",
 		Date:    "2026-08-03",
 		Changes: []string{

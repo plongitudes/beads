@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.48.0] - 2026-08-03
+## [0.48.1] - 2026-09-16
+
+### Changed
+
+- **GitHub Releases re-enabled** - `release.yml` moved back to `.github/workflows/` and trimmed to the goreleaser job only. Tag pushes now publish prebuilt archives, so `scripts/install.sh` downloads a binary instead of falling through to `go install`.
+
+### Removed
+
+- **PyPI, npm, and Homebrew publish jobs** from the release workflow. Those channels remain disabled for this fork.
 
 ## [0.48.0] - 2026-08-03
 
