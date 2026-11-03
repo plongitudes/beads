@@ -1,4 +1,4 @@
-# Rewrite Hand-off
+# Rewrite Hand-off: tesserae
 
 Written 2026-11-02 from plongitudes/beads at v0.48.1 (commit 7f0ff622b, `git@github.com:plongitudes/beads.git`). Purpose: give the new repo everything decided so far, so the design discussion starts from here instead of re-deriving it. Old-repo paths below refer to that commit.
 
@@ -96,7 +96,7 @@ Bugs found during evaluation (not all reproduced). Each points to a design rule.
 - **Agent context integration.** How the tool keeps itself in the agent's context with modern Claude Code (skills, hooks, a plugin) without the forceful, outdated instructions the old `bd prime`/`bd setup` emitted. Old bead bd-ooz has the inventory task.
 - **Events/audit trail.** Old tool wrote an events table nothing read. Keep or drop?
 - **CLI compatibility.** Exact compatibility with old `bd` flags and JSON, or compatible in spirit?
-- **Name and binary.** Same `bd` name, or a new one to avoid confusion while both exist?
+- **Binary name.** The project is named **tesserae** (decided 2026-11-02; a tessera is one issue, the mosaic is the project). Binary is tentatively `tess`, possibly with a `ts` alias. `tess` is free on Homebrew but used by a few unrelated tools (an agent-oriented macOS CLI, a Rust crate, Tesseract OCR's informal nickname).
 
 ## Suggested first spike
 
